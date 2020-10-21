@@ -1,7 +1,7 @@
 module.exports = {
   src: {
     root: './source/',
-    html: './source/views/',
+    html: './source/',
     scss: './source/scss/style.scss',
     js: './source/js/**/*',
     img: './source/img/**/*',
