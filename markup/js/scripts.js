@@ -67,3 +67,5 @@ window.addEventListener("scroll", function(){
 	var footer = document.querySelector(".footer");
 	footer.classList.toggle("stiky", window.scrollY < 10);
 })
+
+

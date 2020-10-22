@@ -65,6 +65,7 @@ body {
   transition: background 600ms; }
 
 .wrapper {
+  max-width: 1280px;
   height: 100vh;
   margin: 0 auto;
   padding: 80px;
@@ -204,18 +205,19 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0 0 80px 0;
   background-blend-mode: multiply; }
   .section:nth-child(1) {
     background: #f8f8f8;
     background-attachment: fixed; }
   .section:nth-child(2) {
-    background: #f8f8f8 url(bg1.jpg) 50%/100% no-repeat;
+    background: #f8f8f8 url("../img/bg2.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .section:nth-child(3) {
-    background: #F92672 url(bg2.png) 50%/cover no-repeat;
+    background: #F92672;
     background-attachment: fixed; }
   .section:nth-child(4) {
-    background: #222629;
+    background: #222629 url("../img/bg4.png") 50%/cover no-repeat;
     background-attachment: fixed; }
   .section:nth-child(5) {
     background: #f8f8f8;
@@ -279,8 +281,8 @@ body {
             clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%); }
   .parallax .clip2 {
     background: #f8f8f8;
-    -webkit-clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
-            clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%); }
+    -webkit-clip-path: polygon(55% 0, 100% 0, 100% 100%, 20% 100%);
+            clip-path: polygon(55% 0, 100% 0, 100% 100%, 20% 100%); }
   .parallax .clip3 {
     background: #87C232;
     -webkit-clip-path: polygon(100% 0, 100% 100%, 45% 100%);
