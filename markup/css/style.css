@@ -195,17 +195,14 @@ body {
     background: #f8f8f8 url("../img/bg2.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .section:nth-child(3) {
-    background: #F92672;
-    background-attachment: fixed; }
+    background: #f8f8f8; }
   .section:nth-child(4) {
     background: #222629 url("../img/bg4.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .section:nth-child(5) {
-    background: #f8f8f8;
-    background-attachment: fixed; }
+    background: #f8f8f8; }
   .section .content-info {
-    height: 100vh;
-    max-width: 700px; }
+    height: 100vh; }
     .section .content-info h2 {
       background: #fff;
       color: #F92672;
@@ -225,12 +222,127 @@ body {
       padding: 10px 20px;
       margin-top: 10px; }
 
+.progress-bar-skills {
+  display: flex;
+  align-items: baseline;
+  padding: 24px 10px;
+  margin: 20px 0;
+  overflow: hidden;
+  transition: 600ms; }
+  .progress-bar-skills h6 {
+    width: 150px; }
+  .progress-bar-skills .htmlCss {
+    height: 15px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-htmlCss 5s ease forwards;
+            animation: finish-htmlCss 5s ease forwards; }
+
+@-webkit-keyframes finish-htmlCss {
+  to {
+    width: 95%; } }
+
+@keyframes finish-htmlCss {
+  to {
+    width: 95%; } }
+  .progress-bar-skills .Responsivelayout {
+    height: 15px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-Responsivelayout 5s ease forwards;
+            animation: finish-Responsivelayout 5s ease forwards; }
+
+@-webkit-keyframes finish-Responsivelayout {
+  to {
+    width: 85%; } }
+
+@keyframes finish-Responsivelayout {
+  to {
+    width: 85%; } }
+  .progress-bar-skills .Bootstrap {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-Bootstrap 6s ease forwards;
+            animation: finish-Bootstrap 6s ease forwards; }
+
+@-webkit-keyframes finish-Bootstrap {
+  to {
+    width: 90%; } }
+
+@keyframes finish-Bootstrap {
+  to {
+    width: 90%; } }
+  .progress-bar-skills .jQuery {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-jQuery 7s ease forwards;
+            animation: finish-jQuery 7s ease forwards; }
+
+@-webkit-keyframes finish-jQuery {
+  to {
+    width: 70%; } }
+
+@keyframes finish-jQuery {
+  to {
+    width: 70%; } }
+  .progress-bar-skills .CssPreprocessors {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-CssPreprocessors 8s ease forwards;
+            animation: finish-CssPreprocessors 8s ease forwards; }
+
+@-webkit-keyframes finish-CssPreprocessors {
+  to {
+    width: 75%; } }
+
+@keyframes finish-CssPreprocessors {
+  to {
+    width: 75%; } }
+  .progress-bar-skills .Gulp {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-Gulp 9s ease forwards;
+            animation: finish-Gulp 9s ease forwards; }
+
+@-webkit-keyframes finish-Gulp {
+  to {
+    width: 60%; } }
+
+@keyframes finish-Gulp {
+  to {
+    width: 60%; } }
+  .progress-bar-skills .Git {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    -webkit-animation: finish-Git 10s ease forwards;
+            animation: finish-Git 10s ease forwards; }
+
+@-webkit-keyframes finish-Git {
+  to {
+    width: 85%; } }
+
+@keyframes finish-Git {
+  to {
+    width: 85%; } }
+
 #Project .content-info {
   opacity: 0; }
 
 #Project:hover .content-info {
   transition: all 600ms ease 0s;
-  transform: translate(30%, 10%);
+  transform: translate(0, 0);
   opacity: 1; }
 
 .text {

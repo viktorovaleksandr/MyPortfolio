@@ -162,8 +162,7 @@ body {
     background-attachment: fixed;
   }
   &:nth-child(3) {
-    background: $brand-color;
-    background-attachment: fixed;
+    background: $bg-content;
   }
   &:nth-child(4) {
     background: $bg-color-dark url('../img/bg4.png') 50% / 100% no-repeat;
@@ -171,11 +170,9 @@ body {
   }
   &:nth-child(5) {
     background:  $bg-content;
-    background-attachment: fixed;
   }
   .content-info {
     height: 100vh;
-    max-width: 700px;
     h2 {
       background: $bg-color;
       color: $brand-color;
@@ -199,17 +196,112 @@ body {
     }
   }
 }
+.progress-bar-skills {
+  display: flex;
+  align-items: baseline;
+  padding: 24px 10px;
+  margin: 20px 0;
+  overflow: hidden;
+  transition: $animStep;
+  h6 {
+    width: 150px;
+  }
+  &
+  .htmlCss {
+    height: 15px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-htmlCss 5s ease forwards;
+    @keyframes finish-htmlCss {
+      to {
+        width: 95%;
+      }
+    }
+  }
+  .Responsivelayout {
+    height: 15px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-Responsivelayout 5s ease forwards;
+    @keyframes finish-Responsivelayout {
+      to {
+        width: 85%;
+      }
+    }
+  }
+  .Bootstrap {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-Bootstrap 6s ease forwards;
+    @keyframes finish-Bootstrap {
+      to {
+        width: 90%;
+      }
+    }
+  }
+  .jQuery {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-jQuery 7s ease forwards;
+    @keyframes finish-jQuery {
+      to {
+        width: 70%;
+      }
+    }
+  }
+  .CssPreprocessors {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-CssPreprocessors 8s ease forwards;
+      @keyframes finish-CssPreprocessors {
+      to {
+        width: 75%;
+      }
+    }
+  }
+  .Gulp {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-Gulp 9s ease forwards;
+    @keyframes finish-Gulp {
+      to {
+        width: 60%;
+      }
+    } 
+  }
+  .Git {
+    height: 10px;
+    background: green;
+    border-radius: 25px;
+    width: 0;
+    animation: finish-Git 10s ease forwards;
+    @keyframes finish-Git {
+      to {
+        width: 85%;
+      }
+    }  
+  }
+}
 #Project {
   .content-info {
     opacity: 0;
   }
   &:hover .content-info {
     transition: all $animStep ease 0s;
-    transform: translate(30%,10%);
+    transform: translate(0,0);
     opacity: 1;
   }
 }
-
 .text {
   transform: translate(0, 120%);
   opacity: 0;
