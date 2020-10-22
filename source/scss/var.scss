@@ -10,3 +10,19 @@ $bg-color-grennDark:#618930;
 
 $step: 80px;
 $animStep: 600ms;
+
+
+@mixin switch-color {
+	--color-1: #fff;
+  	--color-2: #222629;
+}
+@mixin disabled {
+	transform: translate(0, 120%);
+  	transition: all 1s ease 0s;
+  	opacity: 0;
+}
+@mixin visible {
+	transform: translate(0px, 0px);
+   transition: all 1s ease 0s;
+   opacity: 1;
+}

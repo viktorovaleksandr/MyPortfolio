@@ -6,7 +6,7 @@
     <link rel="stylesheet"  type="text/css" href="css/style.min.css">
   </head>
   <body>
-    <header class="heading">
+    <header class="header">
       <a href="#" class="logo">Sasha Viktorov</a>
       <ul class="nav">
         <li><a href="#">Home</a></li>
@@ -16,79 +16,87 @@
         <li><a href="#Experiens">Experiens</a></li>
       </ul>
       <label class="switch">
-        <input class="switch__input" type="checkbox" theme-toggle>
-        <span class="switch__slider"></span>
+        <input class="switch-input" type="checkbox" theme-toggle>
+        <span class="switch-slider"></span>
       </label>
     </header>
     <div class="wrapper">
-      <section class="section">
-        <div class="parallax">
-          <div class="clip clip1">
-            <div class="content-info ">
-              <h1 class="title anim-items">GREEN BUILD IS THE NEW BLACK <span class="makr">.</span></h1>
-            </div>
+      <section class="content divide">
+        <div class="touch touch1">
+          <div class="content-info ">
+            <h1 class="divide-title anim-items animHide">GREEN BUILD IS THE NEW BLACK</h1>
           </div>
-          <div class="clip clip2"></div>
+          </div>
+        <div class="touch touch2">
+          <div class="content-info ">
+            <h1 class="divide-title anim-items animHide">GREEN BUILD IS THE NEW BLACK</h1>
+          </div>
         </div>
-        <a href="#">
-          <div class="bnt-scroll-down"></div>
-        </a>
       </section>
-      <section class="section" id="About">
-      </section>
-      <section class="section" id="Skills">
+      <section class="content" id="About"></section>
+      <section class="content" id="Skills">
         <div class="content-info anim-items">
           <h2 class="title anim-items">SKILLS</h2>
           <div class="progress-bar-skills">
             <h6>HTML/CSS</h6>
-            <div class="htmlCss"></div>
+            <div class="name htmlCss"></div>
           </div>   
           <div class="progress-bar-skills">
             <h6>Responsive layout</h6>
-            <div class="Responsivelayout"></div>
+            <div class="name Responsivelayout"></div>
           </div> 
           <div class="progress-bar-skills">
             <h6>Bootstrap</h6>
-            <div class="Bootstrap"></div>
+            <div class="name Bootstrap"></div>
           </div> 
           <div class="progress-bar-skills">
             <h6>jQuery</h6>
-            <div class="jQuery"></div>
+            <div class="name jQuery"></div>
           </div> 
           <div class="progress-bar-skills">
             <h6>CSS Preprocessors</h6>
-            <div class="CssPreprocessors"></div>
+            <div class="name CssPreprocessors"></div>
           </div> 
           <div class="progress-bar-skills">
             <h6>gulp</h6>
-            <div class="Gulp"></div>
+            <div class="name Gulp"></div>
           </div> 
           <div class="progress-bar-skills">
             <h6>Git</h6>
-            <div class="Git"></div>
+            <div class="name Git"></div>
           </div> 
         </div>
       </section>
-      <section class="section" id="Project">
+      <section class="content" id="Project">
         <div class="content-info anim-items">
           <h2 class="title anim-items">PROJECTS</h2>
-          <div class="progect-item">
-            <h6 class="text animShow">MyLib</h6>
-            <p class="text animShow">Component library with html and css code exaples</p>
-            <a href="">GitHab</a>
+          <div class="progect-block">
+            <h6 class="animShow">MyLib</h6>
+            <p class="animShow">Component library with html and css code exaples</p>
+            <a href="https://github.com/viktorovaleksandr/MyLib">GitHab</a>
           </div>
-          <div class="progect-item">
-            <h6 class="text animShow">Adaptive Loyuot Example</h6>
-            <p class="text animShow">html page wiht burger menu</p>
-            <a href="">GitHab</a>
+          <div class="progect-block">
+            <h6 class="animShow">Adaptive Loyuot Example</h6>
+            <p class="animShow">html page wiht burger menu</p>
+            <a href="https://github.com/viktorovaleksandr/team-portfolio-responsive">GitHab</a>
           </div>
         </div>
       </section>
-      <section class="section" id="Experiens">
-        <div class="content-info anim-items">
-          <h2 class="title anim-items">EXPERIENCE</h2>
-          <p class="text animShow animHide">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Nihil iusto beatae nobis possimus fugit natus deleniti, maxime culpa debitis, eos blanditiis quaerat aspernatur pariatur perspiciatis tempora, labore, harum suscipit quidem.</p>
+      <section class="content" id="Experiens">
+        <h2 class="title anim-items">EXPERIENCE</h2>
+       <div class="progect-block">
+          <data>march 2020 - now</data>
+          <h6 class="animShow">epam</h6>
+          <p class="animShow">Internship</p>
+          <p>Deal with HTML/CSS components for design system.</p>
         </div>
+        <div class="progect-block">
+          <data>march 2020 - now</data>
+          <h6 class="animShow">epam</h6>
+          <p class="animShow">Internship</p>
+          <p>Deal with HTML/CSS components for design system.</p>
+        </div>
+        <a href="">certificate</a>
       </section>
       <footer class="footer">
         <div class="author-info">
@@ -97,9 +105,7 @@
         </div>
         <div class="tel">+38 099 126 27 43</div>
       </footer>
-      <span class="contact">
-          <a href="#" class="bnt-scroll-top"></a>
-      </span>
+      <span class="contact"><a href="#" class="bnt-scroll-top"></a></span>
     </div>
     <script type="text/javascript" src="js/scripts.js" >
     </script>

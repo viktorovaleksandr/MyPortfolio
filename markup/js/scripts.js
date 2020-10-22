@@ -41,7 +41,7 @@ if (animItems.length > 0 ) {
   }, 500);
 }
 const switchStyle = document.documentElement.style;
-const toggle = document.querySelector(".switch__input[theme-toggle]");
+const toggle = document.querySelector(".switch-input[theme-toggle]");
 toggle.addEventListener("click", () => {
   const color1 = getComputedStyle(document.documentElement).getPropertyValue(
     "--color-1"
@@ -55,7 +55,7 @@ toggle.addEventListener("click", () => {
 
 
 window.addEventListener("scroll", function(){
-	var header = document.querySelector(".heading");
+	var header = document.querySelector(".header");
 	header.classList.toggle("stiky", window.scrollY > 0);
 })
 window.addEventListener("scroll", function(){

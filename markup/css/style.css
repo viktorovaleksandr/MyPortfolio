@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Raleway&family=Roboto&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -55,11 +55,7 @@ table {
   --color-1: #fff;
   --color-2: #222629; }
 
-html {
-  scroll-behavior: smooth; }
-
 body {
-  font-family: 'Lato', sans-serif;
   max-width: 1440px;
   background: var(--color-1);
   transition: background 600ms; }
@@ -72,7 +68,7 @@ body {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory; }
 
-.heading {
+.header {
   width: 100%;
   height: 80px;
   display: flex;
@@ -84,7 +80,7 @@ body {
   z-index: 999;
   padding: 40px 80px;
   transition: 600ms; }
-  .heading .logo {
+  .header .logo {
     font-size: 1em;
     font-weight: 700;
     color: #618930;
@@ -92,26 +88,26 @@ body {
     text-decoration: none;
     letter-spacing: 1em;
     transition: 600ms; }
-  .heading .nav {
+  .header .nav {
     display: flex;
     justify-content: space-between;
     opacity: 0; }
-  .heading .nav li {
+  .header .nav li {
     list-style: none; }
-  .heading .nav li a {
+  .header .nav li a {
     margin: 0 15px;
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
     font-weight: 500;
     transition: 600ms; }
-  .heading.stiky {
+  .header.stiky {
     padding: 5px 80px;
     background: #618930; }
-  .heading.stiky .nav {
+  .header.stiky .nav {
     opacity: 1; }
-  .heading.stiky label,
-  .heading.stiky .logo {
+  .header.stiky label,
+  .header.stiky .logo {
     transition: 600ms;
     opacity: 0; }
 
@@ -124,30 +120,30 @@ body {
   z-index: 10;
   width: 3.8rem;
   height: 2rem; }
-  .switch .switch__input {
+  .switch .switch-input {
     opacity: 0;
     width: 0;
     height: 0; }
-    .switch .switch__input:checked ~ .switch__slider {
+    .switch .switch-input:checked ~ .switch-slider {
       background: var(--color-2); }
-    .switch .switch__input:not(:checked):active ~ .switch__slider:before {
+    .switch .switch-input:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem; }
-    .switch .switch__input:checked:active ~ .switch__slider:before {
+    .switch .switch-input:checked:active ~ .switch-slider:before {
       transform: translate(1rem, -50%);
       width: 2.4rem; }
-    .switch .switch__input:checked ~ .switch__slider:before {
+    .switch .switch-input:checked ~ .switch-slider:before {
       transform: translate(1.8rem, -50%); }
-  .switch .switch__slider {
+  .switch .switch-slider {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: #618930;
-    border-radius: 1rem;
+    border-radius: 25px;
     transition: background 600ms;
     cursor: pointer; }
-    .switch .switch__slider:before {
+    .switch .switch-slider:before {
       content: "";
       position: absolute;
       left: 0.2rem;
@@ -159,128 +155,122 @@ body {
       background: var(--color-1);
       transition: transform 0.3s, width 0.3s, background 0.3s; }
 
-.bnt-scroll-down {
-  height: 50px;
-  width: 30px;
-  border-color: transparent;
+.divide {
   position: relative;
-  left: 50%;
-  bottom: 80px;
-  border-radius: 50px; }
-  .bnt-scroll-down:before, .bnt-scroll-down:after {
-    content: "";
+  width: 100%;
+  height: 100vh;
+  background: #fff; }
+  .divide .touch {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    border: 3px solid #F92672;
-    height: 10px;
-    width: 10px;
-    transform: translate(-50%, -100%) rotate(45deg);
-    border-top: transparent;
-    border-left: transparent;
-    -webkit-animation: scroll-down 1.5s ease-in-out infinite;
-            animation: scroll-down 1.5s ease-in-out infinite; }
-  .bnt-scroll-down:after {
-    top: 30%;
-    -webkit-animation-delay: .3s;
-            animation-delay: .3s; }
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: 600ms; }
+  .divide .touch1 {
+    background: #618930;
+    -webkit-clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
+            clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%); }
+  .divide .touch2 {
+    background: #f8f8f8;
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%); }
 
-.section {
-  position: relative;
+.divide:hover .touch {
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%);
+          clip-path: polygon(100% 0, 100% 100%, 100% 100%); }
+
+.divide .touch:hover {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+  .divide .touch:hover .content-box {
+    bottom: 0;
+    opacity: 1; }
+
+.content {
   width: 100%;
   height: 100vh;
   margin: 0 0 80px 0;
   background-blend-mode: multiply; }
-  .section:nth-child(2) {
-    background: #f8f8f8 url("../img/bg2.png") 50%/100% no-repeat;
+  .content:nth-child(2) {
+    background: #f8f8f8 url("../img/bg2.png") 50%/auto no-repeat;
     background-attachment: fixed; }
-  .section:nth-child(3) {
+  .content:nth-child(3) {
     background: #f8f8f8; }
-  .section:nth-child(4) {
-    background: #222629 url("../img/bg4.png") 50%/100% no-repeat;
+  .content:nth-child(4) {
+    background: #fff url("../img/bg4.png") 50%/100% no-repeat;
     background-attachment: fixed; }
-  .section:nth-child(5) {
+  .content:nth-child(5) {
     background: #f8f8f8; }
-  .section .content-info {
-    height: 100vh; }
-    .section .content-info h2 {
-      background: #fff;
-      color: #F92672;
-      font-weight: 600;
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 2em; }
-    .section .content-info h1 {
-      text-align: center;
-      font-weight: bold;
-      font-size: 80px;
-      line-height: 96px;
-      color: #222629; }
-    .section .content-info .text {
-      background: #fff;
-      color: #111;
-      padding: 10px 20px;
-      margin-top: 10px; }
+  .content .content-info .divide-title,
+  .content .content-info .title {
+    width: 530px;
+    font: bold 80px/96px 'Barlow Condensed', sans-serif;
+    color: #272822;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+    transform: translate3d(-100%, 20px, 20px); }
+    .content .content-info .divide-title.active,
+    .content .content-info .title.active {
+      transform: matrix(1, 0.2, 0.2, 2, 300, 145);
+      opacity: 1; }
+  .content .content-info .title {
+    display: flex;
+    justify-content: center;
+    transform: translate(-100%, 0px); }
+    .content .content-info .title.active {
+      transform: translate(0); }
 
 .progress-bar-skills {
+  width: 90%;
   display: flex;
-  align-items: baseline;
-  padding: 24px 10px;
-  margin: 20px 0;
+  align-items: center;
+  margin: 30px auto;
   overflow: hidden;
   transition: 600ms; }
   .progress-bar-skills h6 {
-    width: 150px; }
-  .progress-bar-skills .htmlCss {
-    height: 15px;
+    font: normal 32px/38px 'Raleway', sans-serif;
+    text-align: center;
+    width: 280px; }
+  .progress-bar-skills .name {
+    height: 10px;
     background: green;
     border-radius: 25px;
-    width: 0;
+    width: 0; }
+  .progress-bar-skills .htmlCss {
     -webkit-animation: finish-htmlCss 5s ease forwards;
             animation: finish-htmlCss 5s ease forwards; }
 
 @-webkit-keyframes finish-htmlCss {
   to {
-    width: 95%; } }
+    width: 75%; } }
 
 @keyframes finish-htmlCss {
   to {
-    width: 95%; } }
+    width: 75%; } }
   .progress-bar-skills .Responsivelayout {
-    height: 15px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-Responsivelayout 5s ease forwards;
             animation: finish-Responsivelayout 5s ease forwards; }
 
 @-webkit-keyframes finish-Responsivelayout {
   to {
-    width: 85%; } }
+    width: 55%; } }
 
 @keyframes finish-Responsivelayout {
   to {
-    width: 85%; } }
+    width: 55%; } }
   .progress-bar-skills .Bootstrap {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-Bootstrap 6s ease forwards;
             animation: finish-Bootstrap 6s ease forwards; }
 
 @-webkit-keyframes finish-Bootstrap {
   to {
-    width: 90%; } }
+    width: 60%; } }
 
 @keyframes finish-Bootstrap {
   to {
-    width: 90%; } }
+    width: 60%; } }
   .progress-bar-skills .jQuery {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-jQuery 7s ease forwards;
             animation: finish-jQuery 7s ease forwards; }
 
@@ -292,10 +282,6 @@ body {
   to {
     width: 70%; } }
   .progress-bar-skills .CssPreprocessors {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-CssPreprocessors 8s ease forwards;
             animation: finish-CssPreprocessors 8s ease forwards; }
 
@@ -307,10 +293,6 @@ body {
   to {
     width: 75%; } }
   .progress-bar-skills .Gulp {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-Gulp 9s ease forwards;
             animation: finish-Gulp 9s ease forwards; }
 
@@ -322,89 +304,60 @@ body {
   to {
     width: 60%; } }
   .progress-bar-skills .Git {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     -webkit-animation: finish-Git 10s ease forwards;
             animation: finish-Git 10s ease forwards; }
 
 @-webkit-keyframes finish-Git {
   to {
-    width: 85%; } }
+    width: 75%; } }
 
 @keyframes finish-Git {
   to {
-    width: 85%; } }
-
-#Project .content-info {
-  opacity: 0; }
-
-#Project:hover .content-info {
-  transition: all 600ms ease 0s;
-  transform: translate(0, 0);
-  opacity: 1; }
+    width: 75%; } }
 
 .text {
   transform: translate(0, 120%);
-  opacity: 0;
-  transition: all 600ms ease 0s; }
+  transition: all 1s ease 0s;
+  opacity: 0; }
   .text.active {
     transform: translate(0px, 0px);
-    opacity: 1;
-    transition: all 600ms ease 0s; }
+    transition: all 1s ease 0s;
+    opacity: 1; }
 
 .animShow {
-  transform: translate(0px, 120%);
-  opacity: 0;
-  transition: all 600ms ease 0; }
+  transform: translate(0, 120%);
+  transition: all 1s ease 0s;
+  opacity: 0; }
 
 .animShow.active,
 .active .animShow {
   transform: translate(0px, 0px);
+  transition: all 1s ease 0s;
   opacity: 1; }
 
-.parallax {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #fff; }
-  .parallax .clip {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    transition: 600ms; }
-    .parallax .clip .makr {
-      color: #e6db74; }
-  .parallax .clip1 {
-    background: #618930;
-    -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
-            clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%); }
-  .parallax .clip2 {
-    background: #f8f8f8;
-    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); }
+#Project .content-info {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  opacity: 0; }
 
-.parallax:hover .clip {
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%);
-          clip-path: polygon(100% 0, 100% 100%, 100% 100%); }
+#Project .title {
+  color: #87C232; }
 
-.parallax .clip:hover {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-  .parallax .clip:hover .content-box {
-    bottom: 0;
-    opacity: 1; }
+#Project .progect-block {
+  color: #fff;
+  font: 32px/38px 'Barlow Condensed', sans-serif; }
 
-.title {
-  opacity: 0;
-  transition: all 600ms ease-in-out;
-  transform: translate(-120%, 0px); }
-  .title.active {
-    transform: translate(0px, 0px);
-    opacity: 1; }
+#Project a {
+  font: italic 18px/21px 'Raleway', sans-serif;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #87C232; }
+
+#Project:hover .content-info {
+  transform: translate(0px, 0px);
+  transition: all 1s ease 0s;
+  opacity: 1; }
 
 .bnt-scroll-top {
   position: fixed;

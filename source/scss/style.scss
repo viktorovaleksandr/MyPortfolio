@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Raleway&family=Roboto&display=swap');
 @import 'reset.scss';
 @import 'var.scss';
 
 :root {
-  --color-1: #fff;
-  --color-2: #222629;
-}
-
-html {
-  scroll-behavior: smooth;
+  @include switch-color;
 }
 body {
-  font-family: 'Lato', sans-serif;
   max-width: 1440px;
   background: var(--color-1);
   transition: background $animStep;
@@ -23,7 +17,7 @@ body {
   padding: $step;
   scroll-snap-type: y mandatory;
 }
-.heading {
+.header {
   width: 100%;
   height: $step;
   display: flex;
@@ -82,32 +76,32 @@ body {
   z-index: 10;
   width: 3.8rem;  
   height: 2rem;
-  .switch__input {
+  .switch-input {
     opacity: 0;
     width: 0;
     height: 0;
-    &:checked ~ .switch__slider {
+    &:checked ~ .switch-slider {
       background: var(--color-2);
     }
-    &:not(:checked):active ~ .switch__slider:before {
+    &:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem;
     }
-    &:checked:active ~ .switch__slider:before {
+    &:checked:active ~ .switch-slider:before {
       transform: translate(1rem, -50%);
       width: 2.4rem;
     }
-    &:checked ~ .switch__slider:before {
+    &:checked ~ .switch-slider:before {
     transform: translate(1.8rem, -50%);
     }  
   } 
-  .switch__slider {
+  .switch-slider {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: $bg-color-grennDark;
-    border-radius: 1rem;
+    border-radius: 25px;
     transition: background $animStep;
     cursor: pointer;
       &:before {
@@ -124,130 +118,128 @@ body {
     }
   }
 }
-.bnt-scroll-down {
-  height: 50px;
-  width: 30px;
-  border-color: transparent;
+.divide {
   position: relative;
-  left: 50%;
-  bottom: $step;
-  border-radius: 50px;
-  &:before,
-  &:after {
-    content:"";
+  width: 100%;
+  height: 100vh;
+  background: $bg-color;
+  .touch {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    border: 3px solid $brand-color;
-    height: 10px;
-    width: 10px;
-    transform: translate(-50%, -100%) rotate(45deg);
-    border-top: transparent;
-    border-left: transparent;
-    animation: scroll-down 1.5s ease-in-out infinite;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: $animStep;
   }
-  &:after {
-    top: 30%;
-    animation-delay: .3s;
+  .touch1 {
+    background: $bg-color-grennDark;
+    clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
+  }
+  .touch2 {
+    background: $bg-content;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
   }
 }
-.section {
-  position: relative;
+.divide:hover {
+  .touch {
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%);
+  }
+}
+.divide {
+  .touch:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    .content-box {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+}
+.content {
   width: 100%;
   height: 100vh; 
   margin: 0 0 $step 0;
   background-blend-mode: multiply; 
   &:nth-child(2) {
-    background: $bg-content url('../img/bg2.png') 50% / 100% no-repeat;
+    background: $bg-content url('../img/bg2.png') 50% / auto no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(3) {
     background: $bg-content;
   }
   &:nth-child(4) {
-    background: $bg-color-dark url('../img/bg4.png') 50% / 100% no-repeat;
+    background: $bg-color url('../img/bg4.png') 50% / 100% no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(5) {
     background:  $bg-content;
   }
   .content-info {
-    height: 100vh;
-    h2 {
-      background: $bg-color;
-      color: $brand-color;
-      font-weight: 600;
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 2em;
+    .divide-title,
+    .title {
+      width: 530px;
+      font: bold 80px/96px 'Barlow Condensed', sans-serif;
+      color: $text-color;
+      opacity: 0;
+      transition: all $animStep ease-in-out;
+      transform: translate3d(-100%,20px,20px);
+      &.active {
+        transform: matrix(1, .2, .2, 2, 300, 145);
+        opacity: 1;
+      }
     }
-    h1 {
-      text-align: center;
-      font-weight: bold;
-      font-size: 80px;
-      line-height: 96px;
-      color: $bg-color-dark;
-    }
-    .text {
-      background: $bg-color;
-      color: #111;
-      padding: 10px 20px;
-      margin-top: 10px;
-    }
+    .title {
+      display: flex;
+      justify-content: center;
+      transform: translate(-100%,0px);
+      &.active {
+        transform: translate(0);
+      }
+    } 
   }
 }
 .progress-bar-skills {
+  width: 90%;
   display: flex;
-  align-items: baseline;
-  padding: 24px 10px;
-  margin: 20px 0;
+  align-items: center;
+  margin: 30px auto;
   overflow: hidden;
   transition: $animStep;
   h6 {
-    width: 150px;
+    font: normal 32px/38px 'Raleway', sans-serif;
+    text-align: center;
+    width: 280px;
   }
-  &
-  .htmlCss {
-    height: 15px;
+  .name {
+    height: 10px;
     background: green;
     border-radius: 25px;
     width: 0;
+  }
+  .htmlCss {
     animation: finish-htmlCss 5s ease forwards;
     @keyframes finish-htmlCss {
       to {
-        width: 95%;
+        width: 75%;
       }
     }
   }
   .Responsivelayout {
-    height: 15px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-Responsivelayout 5s ease forwards;
     @keyframes finish-Responsivelayout {
       to {
-        width: 85%;
+        width: 55%;
       }
     }
   }
   .Bootstrap {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-Bootstrap 6s ease forwards;
     @keyframes finish-Bootstrap {
       to {
-        width: 90%;
+        width: 60%;
       }
     }
   }
   .jQuery {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-jQuery 7s ease forwards;
     @keyframes finish-jQuery {
       to {
@@ -256,10 +248,6 @@ body {
     }
   }
   .CssPreprocessors {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-CssPreprocessors 8s ease forwards;
       @keyframes finish-CssPreprocessors {
       to {
@@ -268,10 +256,6 @@ body {
     }
   }
   .Gulp {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-Gulp 9s ease forwards;
     @keyframes finish-Gulp {
       to {
@@ -280,96 +264,54 @@ body {
     } 
   }
   .Git {
-    height: 10px;
-    background: green;
-    border-radius: 25px;
-    width: 0;
     animation: finish-Git 10s ease forwards;
     @keyframes finish-Git {
       to {
-        width: 85%;
+        width: 75%;
       }
     }  
   }
 }
-#Project {
-  .content-info {
-    opacity: 0;
-  }
-  &:hover .content-info {
-    transition: all $animStep ease 0s;
-    transform: translate(0,0);
-    opacity: 1;
-  }
-}
 .text {
-  transform: translate(0, 120%);
-  opacity: 0;
-  transition: all $animStep ease 0s;
+  @include disabled;
   &.active {
-    transform: translate(0px, 0px);
-    opacity: 1;
-    transition: all $animStep ease 0s;
+    @include visible;
   }
 }
 .animShow {
-  transform: translate(0px, 120%);
-  opacity: 0;
-  transition: all $animStep ease 0;
+  @include disabled;
 }
 .animShow.active,
 .active .animShow {
-  transform: translate(0px, 0px);
-  opacity: 1;
+  @include visible;
 }
-.parallax {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: $bg-color;
-  .clip {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    transition: $animStep;
-    .makr {
-      color: $bg-brand;
-    }
+#Project {
+  .content-info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    opacity: 0;
   }
-  .clip1 {
-    background: $bg-color-grennDark;
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  .title {
+    color: $brand-color-dark;
   }
-  .clip2 {
-    background: $bg-content;
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  .progect-block {
+    color: $bg-color;
+    font: 32px/38px 'Barlow Condensed', sans-serif;
+  }
+  a {
+    font: italic 18px/21px 'Raleway', sans-serif;
+    text-decoration-line: underline;
+    color: $brand-color-dark;
+  }
+  &:hover .content-info {
+    @include visible;
   }
 }
-.parallax:hover {
-  .clip {
-    clip-path: polygon(100% 0, 100% 100%, 100% 100%);
-  }
+#Experiens {
+  
 }
-.parallax {
-  .clip:hover {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    .content-box {
-      bottom: 0;
-      opacity: 1;
-    }
-  }
-}
-.title {
-  opacity: 0;
-  transition: all $animStep ease-in-out;
-  transform: translate(-120%,0px);
-  &.active {
-    transform: translate(0px, 0px);
-    opacity: 1;
-  }
-}
+
 .bnt-scroll-top {
   position: fixed;
   z-index: 999;
