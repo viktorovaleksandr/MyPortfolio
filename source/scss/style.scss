@@ -44,27 +44,27 @@ body {
     letter-spacing: 1em;
     transition: $animStep;
   }
-  & ul {
+  & .nav {
     display: flex;
     justify-content: space-between;
     opacity: 0;
   }
-  & ul li {
+  & .nav li {
     list-style: none;
   }
-  & ul li a {
+  & .nav li a {
     margin: 0 15px;
     text-decoration: none;
     color: $bg-color;
     letter-spacing: 2px;
-    font-weight: 500px;
+    font-weight: 500;
     transition: $animStep;
   }
   &.stiky {
     padding: 5px $step;
     background: $bg-color-grennDark;
   }
-  &.stiky .link-item {
+  &.stiky .nav {
     opacity: 1;
   }
   &.stiky label,
@@ -124,32 +124,13 @@ body {
     }
   }
 }
-.nav-profile {
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-  list-style: none;
-  ul {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-  .profile-item {
-    margin: 5px 25px;
-    list-style-type:none;
-    & a * {
-      fill: $brand-color-dark;
-    }
-  }
-}
 .bnt-scroll-down {
   height: 50px;
   width: 30px;
   border-color: transparent;
-  position: absolute;
+  position: relative;
   left: 50%;
-  bottom: 10px;
+  bottom: $step;
   border-radius: 50px;
   &:before,
   &:after {
@@ -176,10 +157,6 @@ body {
   height: 100vh; 
   margin: 0 0 $step 0;
   background-blend-mode: multiply; 
-  &:nth-child(1) {
-    background: $bg-content;
-    background-attachment: fixed;
-  }
   &:nth-child(2) {
     background: $bg-content url('../img/bg2.png') 50% / 100% no-repeat;
     background-attachment: fixed;
@@ -189,7 +166,7 @@ body {
     background-attachment: fixed;
   }
   &:nth-child(4) {
-    background: $bg-color-dark;
+    background: $bg-color-dark url('../img/bg4.png') 50% / 100% no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(5) {
@@ -222,12 +199,17 @@ body {
     }
   }
 }
-.project-link {
-  img {
-    width: 100%;
-    height: 100%;
+#Project {
+  .content-info {
+    opacity: 0;
+  }
+  &:hover .content-info {
+    transition: all $animStep ease 0s;
+    transform: translate(30%,10%);
+    opacity: 1;
   }
 }
+
 .text {
   transform: translate(0, 120%);
   opacity: 0;
@@ -265,11 +247,11 @@ body {
     }
   }
   .clip1 {
-    background: #ff5851;
+    background: $bg-color-grennDark;
     clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
   }
   .clip2 {
-    background: #f8f8f8;
+    background: $bg-content;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
   }
 }

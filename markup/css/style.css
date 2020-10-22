@@ -92,23 +92,23 @@ body {
     text-decoration: none;
     letter-spacing: 1em;
     transition: 600ms; }
-  .heading ul {
+  .heading .nav {
     display: flex;
     justify-content: space-between;
     opacity: 0; }
-  .heading ul li {
+  .heading .nav li {
     list-style: none; }
-  .heading ul li a {
+  .heading .nav li a {
     margin: 0 15px;
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
-    font-weight: 500px;
+    font-weight: 500;
     transition: 600ms; }
   .heading.stiky {
     padding: 5px 80px;
     background: #618930; }
-  .heading.stiky .link-item {
+  .heading.stiky .nav {
     opacity: 1; }
   .heading.stiky label,
   .heading.stiky .logo {
@@ -159,29 +159,13 @@ body {
       background: var(--color-1);
       transition: transform 0.3s, width 0.3s, background 0.3s; }
 
-.nav-profile {
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-  list-style: none; }
-  .nav-profile ul {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; }
-  .nav-profile .profile-item {
-    margin: 5px 25px;
-    list-style-type: none; }
-    .nav-profile .profile-item a * {
-      fill: #87C232; }
-
 .bnt-scroll-down {
   height: 50px;
   width: 30px;
   border-color: transparent;
-  position: absolute;
+  position: relative;
   left: 50%;
-  bottom: 10px;
+  bottom: 80px;
   border-radius: 50px; }
   .bnt-scroll-down:before, .bnt-scroll-down:after {
     content: "";
@@ -207,9 +191,6 @@ body {
   height: 100vh;
   margin: 0 0 80px 0;
   background-blend-mode: multiply; }
-  .section:nth-child(1) {
-    background: #f8f8f8;
-    background-attachment: fixed; }
   .section:nth-child(2) {
     background: #f8f8f8 url("../img/bg2.png") 50%/100% no-repeat;
     background-attachment: fixed; }
@@ -217,7 +198,7 @@ body {
     background: #F92672;
     background-attachment: fixed; }
   .section:nth-child(4) {
-    background: #222629;
+    background: #222629 url("../img/bg4.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .section:nth-child(5) {
     background: #f8f8f8;
@@ -244,9 +225,13 @@ body {
       padding: 10px 20px;
       margin-top: 10px; }
 
-.project-link img {
-  width: 100%;
-  height: 100%; }
+#Project .content-info {
+  opacity: 0; }
+
+#Project:hover .content-info {
+  transition: all 600ms ease 0s;
+  transform: translate(30%, 10%);
+  opacity: 1; }
 
 .text {
   transform: translate(0, 120%);
@@ -282,7 +267,7 @@ body {
     .parallax .clip .makr {
       color: #e6db74; }
   .parallax .clip1 {
-    background: #ff5851;
+    background: #618930;
     -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
             clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%); }
   .parallax .clip2 {

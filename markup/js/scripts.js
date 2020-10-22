@@ -1,5 +1,4 @@
-      const toTop = document.querySelector(".bnt-scroll-top");
-
+const toTop = document.querySelector(".bnt-scroll-top");
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
     toTop.classList.add("active");
@@ -7,9 +6,7 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
-
 const animItems = document.querySelectorAll('.anim-items');
-
 if (animItems.length > 0 ) {
   window.addEventListener('scroll', animOnScroll);
   function animOnScroll() {
@@ -43,9 +40,7 @@ if (animItems.length > 0 ) {
     animOnScroll();
   }, 500);
 }
-
 const switchStyle = document.documentElement.style;
-
 const toggle = document.querySelector(".switch__input[theme-toggle]");
 toggle.addEventListener("click", () => {
   const color1 = getComputedStyle(document.documentElement).getPropertyValue(
@@ -68,4 +63,6 @@ window.addEventListener("scroll", function(){
 	footer.classList.toggle("stiky", window.scrollY < 10);
 })
 
-
+$( "div.burger-menu" ).click(function() {
+  $( 'div.burger-logo-container' ).toggleClass( "menu-open" );
+});
