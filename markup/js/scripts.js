@@ -1,11 +1,6 @@
-const toTop = document.querySelector(".bnt-scroll-top");
-window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 100) {
-    toTop.classList.add("active");
-  } else {
-    toTop.classList.remove("active");
-  }
-})
+
+// Script for Main Content Animation  //
+
 const animItems = document.querySelectorAll('.anim-items');
 if (animItems.length > 0 ) {
   window.addEventListener('scroll', animOnScroll);
@@ -40,8 +35,12 @@ if (animItems.length > 0 ) {
     animOnScroll();
   }, 500);
 }
+
+// Script for Toggle Color Theme // 
+
 const switchStyle = document.documentElement.style;
 const toggle = document.querySelector(".switch-input[theme-toggle]");
+
 toggle.addEventListener("click", () => {
   const color1 = getComputedStyle(document.documentElement).getPropertyValue(
     "--color-1"
@@ -55,18 +54,37 @@ toggle.addEventListener("click", () => {
   const color4 = getComputedStyle(document.documentElement).getPropertyValue(
     "--color-4"
   );
+  const color5 = getComputedStyle(document.documentElement).getPropertyValue(
+    "--color-5"
+  );
+  const color6 = getComputedStyle(document.documentElement).getPropertyValue(
+    "--color-6"
+  );
   switchStyle.setProperty("--color-1", color2);
   switchStyle.setProperty("--color-2", color1);
   switchStyle.setProperty("--color-3", color4);
   switchStyle.setProperty("--color-4", color3);
+  switchStyle.setProperty("--color-5", color6);
+  switchStyle.setProperty("--color-6", color5);
 });
+
+// Script for Header Footer // 
 
 window.addEventListener("scroll", function(){
 	var header = document.querySelector(".header");
 	header.classList.toggle("stiky", window.scrollY > 0);
+
+  var footer = document.querySelector(".footer");
+  footer.classList.toggle("stiky", window.scrollY < 10);
 })
 
-window.addEventListener("scroll", function(){
-	var footer = document.querySelector(".footer");
-	footer.classList.toggle("stiky", window.scrollY < 10);
+// Script for Button Scroll Top // 
+
+const toTop = document.querySelector(".bnt-scroll-top");
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
 })

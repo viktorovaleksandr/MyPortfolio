@@ -7,6 +7,8 @@
   --color-2: #222629;
   --color-3: #F92672;
   --color-4: #618930;
+  --color-5: #E6DB74;
+  --color-6: #87C232;
 }
 html {
   scroll-behavior: smooth;
@@ -38,7 +40,7 @@ body {
   .logo {
     font-size: 1em;
     font-weight: 700;
-    color: $bg-color-grennDark;
+    color: var(--color-2);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1em;
@@ -56,9 +58,25 @@ body {
     margin: 0 15px;
     text-decoration: none;
     color: var(--color-3);
+    font-size: 21px/18px;
     letter-spacing: 2px;
     font-weight: 500;
     transition: $animStep;
+  }
+  & .nav li a:hover { 
+    padding:10px;
+    text-shadow: 
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080,
+      0 0 0px #080;
+    animation: animLilk 1s linear infinite;
   }
   &.stiky {
     padding: 5px $step;
@@ -76,7 +94,7 @@ body {
 .profile-link {
   position: absolute;
   right: 50px;
-  bottom: 50%;
+  top: 50%;
   li {
     list-style: none;
      a {
@@ -90,7 +108,7 @@ body {
       transform: rotate3d(2, 1, 1, 30deg)
     }  
   }
-  .fa {
+  .fa { 
     margin: 0 0 10px 0;
     font-size: 24px;
   }
@@ -167,8 +185,8 @@ body {
       justify-content: center;
       width: 530px;
       font: bold 80px/96px 'Barlow Condensed', sans-serif;
-      color: $bg-color-grennDark;
-      opacity: 0;
+      color: $text-color;
+      opacity: 0; 
       transition: all $animStep ease-in-out;
       transform: translate3d(-100%,20px,20px);
       &.active {
@@ -177,14 +195,14 @@ body {
       }
     }
   .touch1 {
-    background: $bg-brand;
+    background: var(--color-5);
     clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
   }
   .touch2 {
     background: $bg-content;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
     .divide-title {
-      color: $brand-color;
+      color: var(--color-3);
     }
   }
 }
@@ -196,12 +214,30 @@ body {
 .divide {
   .touch:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    .content-box {
-      bottom: 0;
+    .About-block {
       opacity: 1;
+    }
+    .divide-title {
+      opacity: 0;
+      transition: 10ms;
     }
   }
 }
+.About-block {
+    opacity: 0;
+    width: 600px;
+    margin: ($step/2) auto;
+    color: $text-color;
+    h6 {
+      font: 700 32px/38px 'Raleway', sans-serif;
+    }
+    p {
+      font: normal 18px/21px 'Raleway', sans-serif;
+    }
+    data {
+      color: var(--color-3);
+    }
+  }
 .content {
   width: 100%;
   height: 100vh; 
@@ -255,62 +291,6 @@ body {
     background: var(--color-3);
     border-radius: 25px;
     width: 0;
-  }
-  .htmlCss {
-    animation: finish-htmlCss $animRun;
-    @keyframes finish-htmlCss {
-      to {
-        width: 75%;
-      }
-    }
-  }
-  .Responsivelayout {
-    animation: finish-Responsivelayout $animRun;
-    @keyframes finish-Responsivelayout {
-      to {
-        width: 55%;
-      }
-    }
-  }
-  .Bootstrap {
-    animation: finish-Bootstrap $animRun;
-    @keyframes finish-Bootstrap {
-      to {
-        width: 60%;
-      }
-    }
-  }
-  .jQuery {
-    animation: finish-jQuery $animRun;
-    @keyframes finish-jQuery {
-      to {
-        width: 70%;
-      }
-    }
-  }
-  .CssPreprocessors {
-    animation: finish-CssPreprocessors $animRun;
-      @keyframes finish-CssPreprocessors {
-      to {
-        width: 75%;
-      }
-    }
-  }
-  .Gulp {
-    animation: finish-Gulp $animRun;
-    @keyframes finish-Gulp {
-      to {
-        width: 60%;
-      }
-    } 
-  }
-    .Git {
-    animation: finish-Git $animRun;
-    @keyframes finish-Git {
-      to {
-        width: 75%;
-      }
-    }  
   }
 }
 .text {
@@ -422,6 +402,65 @@ body {
     opacity: 0;
   }
 }
+
+// Animation //
+
+.htmlCss {
+  animation: finish-htmlCss $animRun;
+  @keyframes finish-htmlCss {
+  to {
+      width: 75%;
+    }
+  }
+}
+.Responsivelayout {
+  animation: finish-Responsivelayout $animRun;
+  @keyframes finish-Responsivelayout {
+    to {
+    width: 55%;
+    }
+  }
+}
+.Bootstrap {
+  animation: finish-Bootstrap $animRun;
+  @keyframes finish-Bootstrap {
+    to {
+      width: 60%;
+    }
+  }
+}
+.jQuery {
+  animation: finish-jQuery $animRun;
+  @keyframes finish-jQuery {
+    to {
+      width: 70%;
+    }
+  }
+}
+.CssPreprocessors {
+  animation: finish-CssPreprocessors $animRun;
+    @keyframes finish-CssPreprocessors {
+    to {
+      width: 75%;
+    }
+  }
+}
+.Gulp {
+  animation: finish-Gulp $animRun;
+  @keyframes finish-Gulp {
+    to {
+      width: 60%;
+    }
+  } 
+}
+.Git {
+  animation: finish-Git $animRun;
+  @keyframes finish-Git {
+    to {
+      width: 75%;
+    }
+  }  
+}
 @keyframes scroll-up {
   0% {
     opacity: 0;
@@ -437,5 +476,27 @@ body {
     top: 90%;
   }
 }
-
+@keyframes scroll-bottom {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+@keyframes animLilk{
+  0%{
+    filter:hue-rotate(0)
+  }
+  100%{
+    filter:hue-rotate(360deg)
+  }
+}
 

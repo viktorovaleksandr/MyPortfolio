@@ -55,7 +55,9 @@ table {
   --color-1: #fff;
   --color-2: #222629;
   --color-3: #F92672;
-  --color-4: #618930; }
+  --color-4: #618930;
+  --color-5: #E6DB74;
+  --color-6: #87C232; }
 
 html {
   scroll-behavior: smooth; }
@@ -88,7 +90,7 @@ body {
   .header .logo {
     font-size: 1em;
     font-weight: 700;
-    color: #618930;
+    color: var(--color-2);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1em;
@@ -103,9 +105,15 @@ body {
     margin: 0 15px;
     text-decoration: none;
     color: var(--color-3);
+    font-size: 21px/18px;
     letter-spacing: 2px;
     font-weight: 500;
     transition: 1.5s; }
+  .header .nav li a:hover {
+    padding: 10px;
+    text-shadow: 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080;
+    -webkit-animation: animLilk 1s linear infinite;
+            animation: animLilk 1s linear infinite; }
   .header.stiky {
     padding: 5px 80px;
     background: var(--color-1); }
@@ -119,7 +127,7 @@ body {
 .profile-link {
   position: absolute;
   right: 50px;
-  bottom: 50%; }
+  top: 50%; }
   .profile-link li {
     list-style: none; }
     .profile-link li a {
@@ -196,7 +204,7 @@ body {
     justify-content: center;
     width: 530px;
     font: bold 80px/96px 'Barlow Condensed', sans-serif;
-    color: #618930;
+    color: #272822;
     opacity: 0;
     transition: all 1.5s ease-in-out;
     transform: translate3d(-100%, 20px, 20px); }
@@ -204,7 +212,7 @@ body {
       transform: matrix(1, 0.2, 0.2, 2, 300, 145);
       opacity: 1; }
   .divide .touch1 {
-    background: #e6db74;
+    background: var(--color-5);
     -webkit-clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
             clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%); }
   .divide .touch2 {
@@ -212,7 +220,7 @@ body {
     -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%); }
     .divide .touch2 .divide-title {
-      color: #F92672; }
+      color: var(--color-3); }
 
 .divide:hover .touch {
   -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%);
@@ -221,9 +229,23 @@ body {
 .divide .touch:hover {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-  .divide .touch:hover .content-box {
-    bottom: 0;
+  .divide .touch:hover .About-block {
     opacity: 1; }
+  .divide .touch:hover .divide-title {
+    opacity: 0;
+    transition: 10ms; }
+
+.About-block {
+  opacity: 0;
+  width: 600px;
+  margin: 40px auto;
+  color: #272822; }
+  .About-block h6 {
+    font: 700 32px/38px 'Raleway', sans-serif; }
+  .About-block p {
+    font: normal 18px/21px 'Raleway', sans-serif; }
+  .About-block data {
+    color: var(--color-3); }
 
 .content {
   width: 100%;
@@ -269,83 +291,6 @@ body {
     background: var(--color-3);
     border-radius: 25px;
     width: 0; }
-  .progress-bar-skills .htmlCss {
-    -webkit-animation: finish-htmlCss 10s ease forwards infinite 8s;
-            animation: finish-htmlCss 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-htmlCss {
-  to {
-    width: 75%; } }
-
-@keyframes finish-htmlCss {
-  to {
-    width: 75%; } }
-  .progress-bar-skills .Responsivelayout {
-    -webkit-animation: finish-Responsivelayout 10s ease forwards infinite 8s;
-            animation: finish-Responsivelayout 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-Responsivelayout {
-  to {
-    width: 55%; } }
-
-@keyframes finish-Responsivelayout {
-  to {
-    width: 55%; } }
-  .progress-bar-skills .Bootstrap {
-    -webkit-animation: finish-Bootstrap 10s ease forwards infinite 8s;
-            animation: finish-Bootstrap 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-Bootstrap {
-  to {
-    width: 60%; } }
-
-@keyframes finish-Bootstrap {
-  to {
-    width: 60%; } }
-  .progress-bar-skills .jQuery {
-    -webkit-animation: finish-jQuery 10s ease forwards infinite 8s;
-            animation: finish-jQuery 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-jQuery {
-  to {
-    width: 70%; } }
-
-@keyframes finish-jQuery {
-  to {
-    width: 70%; } }
-  .progress-bar-skills .CssPreprocessors {
-    -webkit-animation: finish-CssPreprocessors 10s ease forwards infinite 8s;
-            animation: finish-CssPreprocessors 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-CssPreprocessors {
-  to {
-    width: 75%; } }
-
-@keyframes finish-CssPreprocessors {
-  to {
-    width: 75%; } }
-  .progress-bar-skills .Gulp {
-    -webkit-animation: finish-Gulp 10s ease forwards infinite 8s;
-            animation: finish-Gulp 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-Gulp {
-  to {
-    width: 60%; } }
-
-@keyframes finish-Gulp {
-  to {
-    width: 60%; } }
-  .progress-bar-skills .Git {
-    -webkit-animation: finish-Git 10s ease forwards infinite 8s;
-            animation: finish-Git 10s ease forwards infinite 8s; }
-
-@-webkit-keyframes finish-Git {
-  to {
-    width: 75%; } }
-
-@keyframes finish-Git {
-  to {
-    width: 75%; } }
 
 .text {
   transform: translate(0, 120%);
@@ -456,6 +401,90 @@ body {
     transition: 1.5s;
     opacity: 0; }
 
+.htmlCss {
+  -webkit-animation: finish-htmlCss 10s ease forwards infinite 8s;
+          animation: finish-htmlCss 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-htmlCss {
+  to {
+    width: 75%; } }
+
+@keyframes finish-htmlCss {
+  to {
+    width: 75%; } }
+
+.Responsivelayout {
+  -webkit-animation: finish-Responsivelayout 10s ease forwards infinite 8s;
+          animation: finish-Responsivelayout 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-Responsivelayout {
+  to {
+    width: 55%; } }
+
+@keyframes finish-Responsivelayout {
+  to {
+    width: 55%; } }
+
+.Bootstrap {
+  -webkit-animation: finish-Bootstrap 10s ease forwards infinite 8s;
+          animation: finish-Bootstrap 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-Bootstrap {
+  to {
+    width: 60%; } }
+
+@keyframes finish-Bootstrap {
+  to {
+    width: 60%; } }
+
+.jQuery {
+  -webkit-animation: finish-jQuery 10s ease forwards infinite 8s;
+          animation: finish-jQuery 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-jQuery {
+  to {
+    width: 70%; } }
+
+@keyframes finish-jQuery {
+  to {
+    width: 70%; } }
+
+.CssPreprocessors {
+  -webkit-animation: finish-CssPreprocessors 10s ease forwards infinite 8s;
+          animation: finish-CssPreprocessors 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-CssPreprocessors {
+  to {
+    width: 75%; } }
+
+@keyframes finish-CssPreprocessors {
+  to {
+    width: 75%; } }
+
+.Gulp {
+  -webkit-animation: finish-Gulp 10s ease forwards infinite 8s;
+          animation: finish-Gulp 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-Gulp {
+  to {
+    width: 60%; } }
+
+@keyframes finish-Gulp {
+  to {
+    width: 60%; } }
+
+.Git {
+  -webkit-animation: finish-Git 10s ease forwards infinite 8s;
+          animation: finish-Git 10s ease forwards infinite 8s; }
+
+@-webkit-keyframes finish-Git {
+  to {
+    width: 75%; } }
+
+@keyframes finish-Git {
+  to {
+    width: 75%; } }
+
 @-webkit-keyframes scroll-up {
   0% {
     opacity: 0; }
@@ -477,3 +506,37 @@ body {
   100% {
     opacity: 0;
     top: 90%; } }
+
+@-webkit-keyframes scroll-bottom {
+  0% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    top: 90%; } }
+
+@keyframes scroll-bottom {
+  0% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    top: 90%; } }
+
+@-webkit-keyframes animLilk {
+  0% {
+    filter: hue-rotate(0); }
+  100% {
+    filter: hue-rotate(360deg); } }
+
+@keyframes animLilk {
+  0% {
+    filter: hue-rotate(0); }
+  100% {
+    filter: hue-rotate(360deg); } }
