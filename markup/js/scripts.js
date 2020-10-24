@@ -49,20 +49,24 @@ toggle.addEventListener("click", () => {
   const color2 = getComputedStyle(document.documentElement).getPropertyValue(
     "--color-2"
   );
-    switchStyle.setProperty("--color-1", color2);
+  const color3 = getComputedStyle(document.documentElement).getPropertyValue(
+    "--color-3"
+  );
+  const color4 = getComputedStyle(document.documentElement).getPropertyValue(
+    "--color-4"
+  );
+  switchStyle.setProperty("--color-1", color2);
   switchStyle.setProperty("--color-2", color1);
+  switchStyle.setProperty("--color-3", color4);
+  switchStyle.setProperty("--color-4", color3);
 });
-
 
 window.addEventListener("scroll", function(){
 	var header = document.querySelector(".header");
 	header.classList.toggle("stiky", window.scrollY > 0);
 })
+
 window.addEventListener("scroll", function(){
 	var footer = document.querySelector(".footer");
 	footer.classList.toggle("stiky", window.scrollY < 10);
 })
-
-$( "div.burger-menu" ).click(function() {
-  $( 'div.burger-logo-container' ).toggleClass( "menu-open" );
-});

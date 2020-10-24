@@ -9,13 +9,9 @@ $brand-color-dark: #87C232;
 $bg-color-grennDark:#618930;
 
 $step: 80px;
-$animStep: 600ms;
+$animStep: 1.5s;
+$animRun: 10s ease forwards infinite 8s;
 
-
-@mixin switch-color {
-	--color-1: #fff;
-  	--color-2: #222629;
-}
 @mixin disabled {
 	transform: translate(0, 120%);
   	transition: all 1s ease 0s;

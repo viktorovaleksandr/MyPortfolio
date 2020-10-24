@@ -3,7 +3,13 @@
 @import 'var.scss';
 
 :root {
-  @include switch-color;
+  --color-1: #fff;
+  --color-2: #222629;
+  --color-3: #F92672;
+  --color-4: #618930;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   max-width: 1440px;
@@ -49,18 +55,18 @@ body {
   & .nav li a {
     margin: 0 15px;
     text-decoration: none;
-    color: $bg-color;
+    color: var(--color-3);
     letter-spacing: 2px;
     font-weight: 500;
     transition: $animStep;
   }
   &.stiky {
     padding: 5px $step;
-    background: $bg-color-grennDark;
+    background: var(--color-1);
   }
   &.stiky .nav {
     opacity: 1;
-  }
+  } 
   &.stiky label,
   &.stiky .logo {
     transition: $animStep;
@@ -81,15 +87,17 @@ body {
     width: 0;
     height: 0;
     &:checked ~ .switch-slider {
-      background: var(--color-2);
+      background: $bg-brand;
     }
     &:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem;
     }
-    &:checked:active ~ .switch-slider:before {
-      transform: translate(1rem, -50%);
-      width: 2.4rem;
-    }
+    &:checked:active {
+      & ~ .switch-slider:before {
+        transform: translate(1rem, -50%);
+        width: 2.4rem;
+      }
+    }  
     &:checked ~ .switch-slider:before {
     transform: translate(1.8rem, -50%);
     }  
@@ -119,10 +127,11 @@ body {
   }
 }
 .divide {
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 100%;
   height: 100vh;
-  background: $bg-color;
   .touch {
     position: absolute;
     top: 0;
@@ -131,13 +140,30 @@ body {
     height: 100%;
     transition: $animStep;
   }
+  & .divide-title {
+      display: flex;
+      justify-content: center;
+      width: 530px;
+      font: bold 80px/96px 'Barlow Condensed', sans-serif;
+      color: $bg-color-grennDark;
+      opacity: 0;
+      transition: all $animStep ease-in-out;
+      transform: translate3d(-100%,20px,20px);
+      &.active {
+        transform: matrix(1, .2, .2, 2, 300, 145);
+        opacity: 1;
+      }
+    }
   .touch1 {
-    background: $bg-color-grennDark;
+    background: $bg-brand;
     clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
   }
   .touch2 {
     background: $bg-content;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
+    .divide-title {
+      color: $brand-color;
+    }
   }
 }
 .divide:hover {
@@ -160,7 +186,7 @@ body {
   margin: 0 0 $step 0;
   background-blend-mode: multiply; 
   &:nth-child(2) {
-    background: $bg-content url('../img/bg2.png') 50% / auto no-repeat;
+    background: $bg-content url('../img/bg1.png') 50% / 100% no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(3) {
@@ -174,25 +200,18 @@ body {
     background:  $bg-content;
   }
   .content-info {
-    .divide-title,
     .title {
+      display: flex;
+      justify-content: center;
       width: 530px;
       font: bold 80px/96px 'Barlow Condensed', sans-serif;
       color: $text-color;
       opacity: 0;
       transition: all $animStep ease-in-out;
-      transform: translate3d(-100%,20px,20px);
-      &.active {
-        transform: matrix(1, .2, .2, 2, 300, 145);
-        opacity: 1;
-      }
-    }
-    .title {
-      display: flex;
-      justify-content: center;
       transform: translate(-100%,0px);
       &.active {
         transform: translate(0);
+        opacity: 1;
       }
     } 
   }
@@ -211,12 +230,12 @@ body {
   }
   .name {
     height: 10px;
-    background: green;
+    background: var(--color-3);
     border-radius: 25px;
     width: 0;
   }
   .htmlCss {
-    animation: finish-htmlCss 5s ease forwards;
+    animation: finish-htmlCss $animRun;
     @keyframes finish-htmlCss {
       to {
         width: 75%;
@@ -224,7 +243,7 @@ body {
     }
   }
   .Responsivelayout {
-    animation: finish-Responsivelayout 5s ease forwards;
+    animation: finish-Responsivelayout $animRun;
     @keyframes finish-Responsivelayout {
       to {
         width: 55%;
@@ -232,7 +251,7 @@ body {
     }
   }
   .Bootstrap {
-    animation: finish-Bootstrap 6s ease forwards;
+    animation: finish-Bootstrap $animRun;
     @keyframes finish-Bootstrap {
       to {
         width: 60%;
@@ -240,7 +259,7 @@ body {
     }
   }
   .jQuery {
-    animation: finish-jQuery 7s ease forwards;
+    animation: finish-jQuery $animRun;
     @keyframes finish-jQuery {
       to {
         width: 70%;
@@ -248,7 +267,7 @@ body {
     }
   }
   .CssPreprocessors {
-    animation: finish-CssPreprocessors 8s ease forwards;
+    animation: finish-CssPreprocessors $animRun;
       @keyframes finish-CssPreprocessors {
       to {
         width: 75%;
@@ -256,15 +275,15 @@ body {
     }
   }
   .Gulp {
-    animation: finish-Gulp 9s ease forwards;
+    animation: finish-Gulp $animRun;
     @keyframes finish-Gulp {
       to {
         width: 60%;
       }
     } 
   }
-  .Git {
-    animation: finish-Git 10s ease forwards;
+    .Git {
+    animation: finish-Git $animRun;
     @keyframes finish-Git {
       to {
         width: 75%;
@@ -286,32 +305,37 @@ body {
   @include visible;
 }
 #Project {
+  padding: $step ;
   .content-info {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
     opacity: 0;
   }
-  .title {
-    color: $brand-color-dark;
-  }
   .progect-block {
+    margin: $step auto;
     color: $bg-color;
     font: 32px/38px 'Barlow Condensed', sans-serif;
   }
   a {
     font: italic 18px/21px 'Raleway', sans-serif;
-    text-decoration-line: underline;
-    color: $brand-color-dark;
+    text-decoration-line: underline; 
+    color: var(--color-3);
   }
   &:hover .content-info {
     @include visible;
   }
 }
 #Experiens {
-  
+  padding: $step;
+  .Experiens-block {
+    margin: ($step/2) auto;
+    color: $text-color;
+    font: 32px/38px 'Barlow Condensed', sans-serif;
+  }
+  a, data {
+    font: italic 18px/21px 'Raleway', sans-serif;
+    text-decoration-line: underline; 
+    color: var(--color-3);
+  }
 }
-
 .bnt-scroll-top {
   position: fixed;
   z-index: 999;
@@ -321,14 +345,14 @@ body {
   height: 50px;
   opacity: 0;
   pointer-events: none;
-  transition: all $animStep;
+  transition: $animStep;
   &:before,
   &:after {
     content:"";
     position: absolute;
     top: 0;
     left: 50%;
-    border: 3px solid $brand-color;
+    border: 3px solid var(--color-3);
     height: 10px;
     width: 10px;
     transform: translate(-50%, -100%) rotate(225deg);
@@ -349,20 +373,21 @@ body {
 .footer {
   width: 100%;
   height: $step;
+  color: var(--color-2);
+  background: var(--color-1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
-  background: $bg-color;
   z-index: 999;
   padding: 5px $step;
   transition: $animStep;
   .author-info h6 {
+    color: var(--color-3);
     font-size: 18px;
     line-height: 21px;
-    color: $brand-color-dark;;
   }
   .author-info span {
     font-weight: bold;
@@ -376,21 +401,6 @@ body {
   }
 }
 @keyframes scroll-up {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: 90%;
-  }
-}
-@keyframes scroll-down {
   0% {
     opacity: 0;
   }

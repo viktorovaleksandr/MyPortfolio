@@ -53,12 +53,17 @@ table {
 
 :root {
   --color-1: #fff;
-  --color-2: #222629; }
+  --color-2: #222629;
+  --color-3: #F92672;
+  --color-4: #618930; }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
   max-width: 1440px;
   background: var(--color-1);
-  transition: background 600ms; }
+  transition: background 1.5s; }
 
 .wrapper {
   max-width: 1280px;
@@ -79,7 +84,7 @@ body {
   left: 0;
   z-index: 999;
   padding: 40px 80px;
-  transition: 600ms; }
+  transition: 1.5s; }
   .header .logo {
     font-size: 1em;
     font-weight: 700;
@@ -87,7 +92,7 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1em;
-    transition: 600ms; }
+    transition: 1.5s; }
   .header .nav {
     display: flex;
     justify-content: space-between;
@@ -97,22 +102,22 @@ body {
   .header .nav li a {
     margin: 0 15px;
     text-decoration: none;
-    color: #fff;
+    color: var(--color-3);
     letter-spacing: 2px;
     font-weight: 500;
-    transition: 600ms; }
+    transition: 1.5s; }
   .header.stiky {
     padding: 5px 80px;
-    background: #618930; }
+    background: var(--color-1); }
   .header.stiky .nav {
     opacity: 1; }
   .header.stiky label,
   .header.stiky .logo {
-    transition: 600ms;
+    transition: 1.5s;
     opacity: 0; }
 
 .switch {
-  transition: 600ms;
+  transition: 1.5s;
   position: absolute;
   display: inline-block;
   top: 25px;
@@ -125,7 +130,7 @@ body {
     width: 0;
     height: 0; }
     .switch .switch-input:checked ~ .switch-slider {
-      background: var(--color-2); }
+      background: #e6db74; }
     .switch .switch-input:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem; }
     .switch .switch-input:checked:active ~ .switch-slider:before {
@@ -141,7 +146,7 @@ body {
     bottom: 0;
     background: #618930;
     border-radius: 25px;
-    transition: background 600ms;
+    transition: background 1.5s;
     cursor: pointer; }
     .switch .switch-slider:before {
       content: "";
@@ -156,25 +161,40 @@ body {
       transition: transform 0.3s, width 0.3s, background 0.3s; }
 
 .divide {
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 100%;
-  height: 100vh;
-  background: #fff; }
+  height: 100vh; }
   .divide .touch {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    transition: 600ms; }
+    transition: 1.5s; }
+  .divide .divide-title {
+    display: flex;
+    justify-content: center;
+    width: 530px;
+    font: bold 80px/96px 'Barlow Condensed', sans-serif;
+    color: #618930;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+    transform: translate3d(-100%, 20px, 20px); }
+    .divide .divide-title.active {
+      transform: matrix(1, 0.2, 0.2, 2, 300, 145);
+      opacity: 1; }
   .divide .touch1 {
-    background: #618930;
+    background: #e6db74;
     -webkit-clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
             clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%); }
   .divide .touch2 {
     background: #f8f8f8;
     -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%); }
+    .divide .touch2 .divide-title {
+      color: #F92672; }
 
 .divide:hover .touch {
   -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%);
@@ -193,7 +213,7 @@ body {
   margin: 0 0 80px 0;
   background-blend-mode: multiply; }
   .content:nth-child(2) {
-    background: #f8f8f8 url("../img/bg2.png") 50%/auto no-repeat;
+    background: #f8f8f8 url("../img/bg1.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .content:nth-child(3) {
     background: #f8f8f8; }
@@ -202,24 +222,18 @@ body {
     background-attachment: fixed; }
   .content:nth-child(5) {
     background: #f8f8f8; }
-  .content .content-info .divide-title,
   .content .content-info .title {
+    display: flex;
+    justify-content: center;
     width: 530px;
     font: bold 80px/96px 'Barlow Condensed', sans-serif;
     color: #272822;
     opacity: 0;
-    transition: all 600ms ease-in-out;
-    transform: translate3d(-100%, 20px, 20px); }
-    .content .content-info .divide-title.active,
-    .content .content-info .title.active {
-      transform: matrix(1, 0.2, 0.2, 2, 300, 145);
-      opacity: 1; }
-  .content .content-info .title {
-    display: flex;
-    justify-content: center;
+    transition: all 1.5s ease-in-out;
     transform: translate(-100%, 0px); }
     .content .content-info .title.active {
-      transform: translate(0); }
+      transform: translate(0);
+      opacity: 1; }
 
 .progress-bar-skills {
   width: 90%;
@@ -227,19 +241,19 @@ body {
   align-items: center;
   margin: 30px auto;
   overflow: hidden;
-  transition: 600ms; }
+  transition: 1.5s; }
   .progress-bar-skills h6 {
     font: normal 32px/38px 'Raleway', sans-serif;
     text-align: center;
     width: 280px; }
   .progress-bar-skills .name {
     height: 10px;
-    background: green;
+    background: var(--color-3);
     border-radius: 25px;
     width: 0; }
   .progress-bar-skills .htmlCss {
-    -webkit-animation: finish-htmlCss 5s ease forwards;
-            animation: finish-htmlCss 5s ease forwards; }
+    -webkit-animation: finish-htmlCss 10s ease forwards infinite 8s;
+            animation: finish-htmlCss 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-htmlCss {
   to {
@@ -249,8 +263,8 @@ body {
   to {
     width: 75%; } }
   .progress-bar-skills .Responsivelayout {
-    -webkit-animation: finish-Responsivelayout 5s ease forwards;
-            animation: finish-Responsivelayout 5s ease forwards; }
+    -webkit-animation: finish-Responsivelayout 10s ease forwards infinite 8s;
+            animation: finish-Responsivelayout 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-Responsivelayout {
   to {
@@ -260,8 +274,8 @@ body {
   to {
     width: 55%; } }
   .progress-bar-skills .Bootstrap {
-    -webkit-animation: finish-Bootstrap 6s ease forwards;
-            animation: finish-Bootstrap 6s ease forwards; }
+    -webkit-animation: finish-Bootstrap 10s ease forwards infinite 8s;
+            animation: finish-Bootstrap 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-Bootstrap {
   to {
@@ -271,8 +285,8 @@ body {
   to {
     width: 60%; } }
   .progress-bar-skills .jQuery {
-    -webkit-animation: finish-jQuery 7s ease forwards;
-            animation: finish-jQuery 7s ease forwards; }
+    -webkit-animation: finish-jQuery 10s ease forwards infinite 8s;
+            animation: finish-jQuery 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-jQuery {
   to {
@@ -282,8 +296,8 @@ body {
   to {
     width: 70%; } }
   .progress-bar-skills .CssPreprocessors {
-    -webkit-animation: finish-CssPreprocessors 8s ease forwards;
-            animation: finish-CssPreprocessors 8s ease forwards; }
+    -webkit-animation: finish-CssPreprocessors 10s ease forwards infinite 8s;
+            animation: finish-CssPreprocessors 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-CssPreprocessors {
   to {
@@ -293,8 +307,8 @@ body {
   to {
     width: 75%; } }
   .progress-bar-skills .Gulp {
-    -webkit-animation: finish-Gulp 9s ease forwards;
-            animation: finish-Gulp 9s ease forwards; }
+    -webkit-animation: finish-Gulp 10s ease forwards infinite 8s;
+            animation: finish-Gulp 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-Gulp {
   to {
@@ -304,8 +318,8 @@ body {
   to {
     width: 60%; } }
   .progress-bar-skills .Git {
-    -webkit-animation: finish-Git 10s ease forwards;
-            animation: finish-Git 10s ease forwards; }
+    -webkit-animation: finish-Git 10s ease forwards infinite 8s;
+            animation: finish-Git 10s ease forwards infinite 8s; }
 
 @-webkit-keyframes finish-Git {
   to {
@@ -335,29 +349,35 @@ body {
   transition: all 1s ease 0s;
   opacity: 1; }
 
-#Project .content-info {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  opacity: 0; }
+#Project {
+  padding: 80px; }
+  #Project .content-info {
+    opacity: 0; }
+  #Project .progect-block {
+    margin: 80px auto;
+    color: #fff;
+    font: 32px/38px 'Barlow Condensed', sans-serif; }
+  #Project a {
+    font: italic 18px/21px 'Raleway', sans-serif;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: var(--color-3); }
+  #Project:hover .content-info {
+    transform: translate(0px, 0px);
+    transition: all 1s ease 0s;
+    opacity: 1; }
 
-#Project .title {
-  color: #87C232; }
-
-#Project .progect-block {
-  color: #fff;
-  font: 32px/38px 'Barlow Condensed', sans-serif; }
-
-#Project a {
-  font: italic 18px/21px 'Raleway', sans-serif;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-  color: #87C232; }
-
-#Project:hover .content-info {
-  transform: translate(0px, 0px);
-  transition: all 1s ease 0s;
-  opacity: 1; }
+#Experiens {
+  padding: 80px; }
+  #Experiens .Experiens-block {
+    margin: 40px auto;
+    color: #272822;
+    font: 32px/38px 'Barlow Condensed', sans-serif; }
+  #Experiens a, #Experiens data {
+    font: italic 18px/21px 'Raleway', sans-serif;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: var(--color-3); }
 
 .bnt-scroll-top {
   position: fixed;
@@ -368,13 +388,13 @@ body {
   height: 50px;
   opacity: 0;
   pointer-events: none;
-  transition: all 600ms; }
+  transition: 1.5s; }
   .bnt-scroll-top:before, .bnt-scroll-top:after {
     content: "";
     position: absolute;
     top: 0;
     left: 50%;
-    border: 3px solid #F92672;
+    border: 3px solid var(--color-3);
     height: 10px;
     width: 10px;
     transform: translate(-50%, -100%) rotate(225deg);
@@ -394,27 +414,28 @@ body {
 .footer {
   width: 100%;
   height: 80px;
+  color: var(--color-2);
+  background: var(--color-1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
-  background: #fff;
   z-index: 999;
   padding: 5px 80px;
-  transition: 600ms; }
+  transition: 1.5s; }
   .footer .author-info h6 {
+    color: var(--color-3);
     font-size: 18px;
-    line-height: 21px;
-    color: #87C232; }
+    line-height: 21px; }
   .footer .author-info span {
     font-weight: bold;
     font-size: 32px;
     line-height: 38px; }
   .footer.stiky .author-info,
   .footer.stiky .tel {
-    transition: 600ms;
+    transition: 1.5s;
     opacity: 0; }
 
 @-webkit-keyframes scroll-up {
@@ -429,28 +450,6 @@ body {
     top: 90%; } }
 
 @keyframes scroll-up {
-  0% {
-    opacity: 0; }
-  30% {
-    opacity: 1; }
-  60% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
-    top: 90%; } }
-
-@-webkit-keyframes scroll-down {
-  0% {
-    opacity: 0; }
-  30% {
-    opacity: 1; }
-  60% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
-    top: 90%; } }
-
-@keyframes scroll-down {
   0% {
     opacity: 0; }
   30% {
