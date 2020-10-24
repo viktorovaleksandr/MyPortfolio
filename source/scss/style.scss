@@ -73,6 +73,28 @@ body {
     opacity: 0;
   }
 }
+.profile-link {
+  position: absolute;
+  right: 50px;
+  bottom: 50%;
+  li {
+    list-style: none;
+     a {
+      text-decoration: none;
+      color: var(--color-3);
+      letter-spacing: 2px;
+      font-weight: 500;
+      transition: $animStep
+    }
+    &:hover .fa {
+      transform: rotate3d(2, 1, 1, 30deg)
+    }  
+  }
+  .fa {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+  }
+}
 .switch {
   transition: $animStep;
   position: absolute;
@@ -87,7 +109,7 @@ body {
     width: 0;
     height: 0;
     &:checked ~ .switch-slider {
-      background: $bg-brand;
+      background: var(--color-3);
     }
     &:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem;
@@ -108,7 +130,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: $bg-color-grennDark;
+    background: var(--color-3);
     border-radius: 25px;
     transition: background $animStep;
     cursor: pointer;

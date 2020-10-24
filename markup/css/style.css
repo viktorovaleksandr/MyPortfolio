@@ -116,6 +116,24 @@ body {
     transition: 1.5s;
     opacity: 0; }
 
+.profile-link {
+  position: absolute;
+  right: 50px;
+  bottom: 50%; }
+  .profile-link li {
+    list-style: none; }
+    .profile-link li a {
+      text-decoration: none;
+      color: var(--color-3);
+      letter-spacing: 2px;
+      font-weight: 500;
+      transition: 1.5s; }
+    .profile-link li:hover .fa {
+      transform: rotate3d(2, 1, 1, 30deg); }
+  .profile-link .fa {
+    margin: 0 0 10px 0;
+    font-size: 24px; }
+
 .switch {
   transition: 1.5s;
   position: absolute;
@@ -130,7 +148,7 @@ body {
     width: 0;
     height: 0; }
     .switch .switch-input:checked ~ .switch-slider {
-      background: #e6db74; }
+      background: var(--color-3); }
     .switch .switch-input:not(:checked):active ~ .switch-slider:before {
       width: 2.4rem; }
     .switch .switch-input:checked:active ~ .switch-slider:before {
@@ -144,7 +162,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #618930;
+    background: var(--color-3);
     border-radius: 25px;
     transition: background 1.5s;
     cursor: pointer; }
