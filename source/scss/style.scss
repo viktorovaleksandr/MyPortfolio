@@ -82,11 +82,13 @@ body {
     padding: 5px $step;
     background: var(--color-1);
   }
-  &.stiky .nav {
+  &.stiky .nav,
+  .bnt-scroll-down {
     opacity: 1;
   } 
   &.stiky label,
-  &.stiky .logo {
+  &.stiky .logo,
+  &.stiky .bnt-scroll-down {
     transition: $animStep;
     opacity: 0;
   }
@@ -223,6 +225,33 @@ body {
     }
   }
 }
+.bnt-scroll-down {
+  height: 50px;
+  width: 30px;
+  border-color: transparent;
+  position: absolute;
+  left: 50px;
+  bottom: -50vh;
+  border-radius: 50px;
+}
+.bnt-scroll-down:before,
+.bnt-scroll-down:after {
+  content:"";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 3px solid var(--color-3);
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+.bnt-scroll-down:after {
+  top: 30%;
+  animation-delay: .3s;
+}
 .About-block {
     opacity: 0;
     width: 600px;
@@ -244,14 +273,14 @@ body {
   margin: 0 0 $step 0;
   background-blend-mode: multiply; 
   &:nth-child(2) {
-    background: $bg-content url('../img/bg1.png') 50% / 100% no-repeat;
+    background: url('../img/bg1.png') 50% / 100% no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(3) {
     background: $bg-content;
   }
   &:nth-child(4) {
-    background: $bg-color url('../img/bg4.png') 50% / 100% no-repeat;
+    background: url('../img/bg4.png') 50% / 100% no-repeat;
     background-attachment: fixed;
   }
   &:nth-child(5) {
@@ -308,6 +337,7 @@ body {
 }
 #Project {
   padding: $step ;
+  cursor: pointer;
   .content-info {
     opacity: 0;
   }
@@ -323,6 +353,10 @@ body {
   }
   &:hover .content-info {
     @include visible;
+  }
+  &:hover {
+    @include visible;
+    background: var(--color-3) url('../img/Rectangle 4.png') 50% / 100% no-repeat;;
   }
 }
 #Experiens {
@@ -461,7 +495,7 @@ body {
     }
   }  
 }
-@keyframes scroll-up {
+@keyframes scroll-down {
   0% {
     opacity: 0;
   }
@@ -476,7 +510,7 @@ body {
     top: 90%;
   }
 }
-@keyframes scroll-bottom {
+@keyframes scroll-up {
   0% {
     opacity: 0;
   }
@@ -499,4 +533,5 @@ body {
     filter:hue-rotate(360deg)
   }
 }
+
 

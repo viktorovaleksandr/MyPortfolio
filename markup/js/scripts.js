@@ -76,6 +76,7 @@ window.addEventListener("scroll", function(){
 
   var footer = document.querySelector(".footer");
   footer.classList.toggle("stiky", window.scrollY < 10);
+
 })
 
 // Script for Button Scroll Top // 
@@ -88,3 +89,4 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
+

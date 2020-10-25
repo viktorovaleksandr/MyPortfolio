@@ -117,10 +117,12 @@ body {
   .header.stiky {
     padding: 5px 80px;
     background: var(--color-1); }
-  .header.stiky .nav {
+  .header.stiky .nav,
+  .header .bnt-scroll-down {
     opacity: 1; }
   .header.stiky label,
-  .header.stiky .logo {
+  .header.stiky .logo,
+  .header.stiky .bnt-scroll-down {
     transition: 1.5s;
     opacity: 0; }
 
@@ -235,6 +237,35 @@ body {
     opacity: 0;
     transition: 10ms; }
 
+.bnt-scroll-down {
+  height: 50px;
+  width: 30px;
+  border-color: transparent;
+  position: absolute;
+  left: 50px;
+  bottom: -50vh;
+  border-radius: 50px; }
+
+.bnt-scroll-down:before,
+.bnt-scroll-down:after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 3px solid var(--color-3);
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  -webkit-animation: scroll-down 1s ease-in-out infinite;
+          animation: scroll-down 1s ease-in-out infinite; }
+
+.bnt-scroll-down:after {
+  top: 30%;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s; }
+
 .About-block {
   opacity: 0;
   width: 600px;
@@ -253,12 +284,12 @@ body {
   margin: 0 0 80px 0;
   background-blend-mode: multiply; }
   .content:nth-child(2) {
-    background: #f8f8f8 url("../img/bg1.png") 50%/100% no-repeat;
+    background: url("../img/bg1.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .content:nth-child(3) {
     background: #f8f8f8; }
   .content:nth-child(4) {
-    background: #fff url("../img/bg4.png") 50%/100% no-repeat;
+    background: url("../img/bg4.png") 50%/100% no-repeat;
     background-attachment: fixed; }
   .content:nth-child(5) {
     background: #f8f8f8; }
@@ -313,7 +344,8 @@ body {
   opacity: 1; }
 
 #Project {
-  padding: 80px; }
+  padding: 80px;
+  cursor: pointer; }
   #Project .content-info {
     opacity: 0; }
   #Project .progect-block {
@@ -329,6 +361,11 @@ body {
     transform: translate(0px, 0px);
     transition: all 1s ease 0s;
     opacity: 1; }
+  #Project:hover {
+    transform: translate(0px, 0px);
+    transition: all 1s ease 0s;
+    opacity: 1;
+    background: var(--color-3) url("../img/Rectangle 4.png") 50%/100% no-repeat; }
 
 #Experiens {
   padding: 80px; }
@@ -485,6 +522,28 @@ body {
   to {
     width: 75%; } }
 
+@-webkit-keyframes scroll-down {
+  0% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    top: 90%; } }
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    top: 90%; } }
+
 @-webkit-keyframes scroll-up {
   0% {
     opacity: 0; }
@@ -497,28 +556,6 @@ body {
     top: 90%; } }
 
 @keyframes scroll-up {
-  0% {
-    opacity: 0; }
-  30% {
-    opacity: 1; }
-  60% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
-    top: 90%; } }
-
-@-webkit-keyframes scroll-bottom {
-  0% {
-    opacity: 0; }
-  30% {
-    opacity: 1; }
-  60% {
-    opacity: 1; }
-  100% {
-    opacity: 0;
-    top: 90%; } }
-
-@keyframes scroll-bottom {
   0% {
     opacity: 0; }
   30% {
