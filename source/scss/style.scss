@@ -10,6 +10,7 @@
   --color-5: #E6DB74;
   --color-6: #87C232;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -96,7 +97,7 @@ body {
 .profile-link {
   position: absolute;
   right: 50px;
-  top: 50%;
+  top: 40%;
   li {
     list-style: none;
      a {
@@ -113,6 +114,97 @@ body {
   .fa { 
     margin: 0 0 10px 0;
     font-size: 24px;
+  }
+}
+.burger-nav {
+  position: absolute;
+  z-index: 10;
+  li {
+    list-style-type: none;
+    padding: 10px;
+    text-align: right;
+  }
+  li:not(.open) {
+    animation-duration: $animStep;
+    animation-fill-mode: both;
+    animation-name: BurgerLinkOutLeft;
+  }
+  li:first-child {
+    padding-top: $step;
+  }
+  &.open {
+    visibility: visible;
+  li {
+    animation-duration: $animStep;
+    animation-fill-mode: both;
+    animation-name: BurgerLinkInLeft;
+    }
+  }
+}
+.burger-link {
+  background: transparent;
+  color: var(--color-2);
+  font: 32px/38px 'Barlow Condensed', sans-serif;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: $animStep;
+  width: auto;
+  &:hover,
+  &--active {
+    border-left: var(--color-3) solid 3px;
+    padding-left: 5px;
+  }
+}
+.b-menu {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 60px;
+  padding-left: 15px;
+  padding-top: 18px;
+  position: relative;
+  transition: $animStep;
+  user-select: none;
+  width: 60px;
+  z-index: 10;
+}
+.b-bun {
+  display: block;
+  background: var(--color-3);
+  position: relative;
+  transition: $animStep/2;
+  &--top,
+  &--mid,
+  &--bottom {
+    height: 2px;
+    top: 0;
+    left: 6px;
+    width: 30px;
+  }
+  &--mid {
+    left: 0;
+    top: 8px;
+  }
+  &--bottom {
+    top: 16px;
+  }
+}
+.b-container {
+  position: absolute;
+  left: 30px;
+  top: 45%;
+  &.open {
+    .b-bun--top {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+    .b-bun--mid {
+      opacity: 0;
+    }
+    .b-bun--bottom {
+      top: 5px;
+      transform: rotate(-45deg);
+    }
   }
 }
 .switch {
@@ -225,33 +317,6 @@ body {
     }
   }
 }
-.bnt-scroll-down {
-  height: 50px;
-  width: 30px;
-  border-color: transparent;
-  position: absolute;
-  left: 50px;
-  bottom: -50vh;
-  border-radius: 50px;
-}
-.bnt-scroll-down:before,
-.bnt-scroll-down:after {
-  content:"";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  border: 3px solid var(--color-3);
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -100%) rotate(45deg);
-  border-top: transparent;
-  border-left: transparent;
-  animation: scroll-down 1s ease-in-out infinite;
-}
-.bnt-scroll-down:after {
-  top: 30%;
-  animation-delay: .3s;
-}
 .About-block {
     opacity: 0;
     width: 600px;
@@ -304,18 +369,21 @@ body {
   }
 }
 .progress-bar-skills {
-  width: 90%;
+  max-width: 90%;
   display: flex;
   align-items: center;
   margin: 30px auto;
   overflow: hidden;
   transition: $animStep;
   h6 {
+    flex-basis: 30%;
     font: normal 32px/38px 'Raleway', sans-serif;
     text-align: center;
     width: 280px;
   }
   .name {
+    font: normal 18px/16px 'Barlow Condensed', sans-serif;
+    text-align: right;
     height: 10px;
     background: var(--color-3);
     border-radius: 25px;
@@ -356,7 +424,7 @@ body {
   }
   &:hover {
     @include visible;
-    background: var(--color-3) url('../img/Rectangle 4.png') 50% / 100% no-repeat;;
+    background: var(--color-3) url('../img/Rectangle 4.png') 50% / 100% no-repeat;
   }
 }
 #Experiens {
@@ -376,7 +444,7 @@ body {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  right: 0;
+  right: 40px;
   width: 50px;
   height: 50px;
   opacity: 0;
@@ -534,4 +602,23 @@ body {
   }
 }
 
+@keyframes BurgerLinkInLeft {
+  0% {
+    transform: translate3d(0,250px,50px);
+    visibility: visible;
+  }
 
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes BurgerLinkOutLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-250px, 0, 0);
+    visibility: hidden;
+  }
+}

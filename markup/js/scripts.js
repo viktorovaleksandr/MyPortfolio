@@ -68,6 +68,23 @@ toggle.addEventListener("click", () => {
   switchStyle.setProperty("--color-6", color5);
 });
 
+// Script for Burger Menu // 
+
+'use strict';
+
+(function() {
+  var body = document.body;
+  var burgerMenu = document.getElementsByClassName('b-menu')[0];
+  var burgerContain = document.getElementsByClassName('b-container')[0];
+  var burgerNav = document.getElementsByClassName('burger-nav')[0];
+
+  burgerMenu.addEventListener('click', function toggleClasses() {
+    [body, burgerContain, burgerNav].forEach(function (el) {
+      el.classList.toggle('open');
+    });
+  }, false);
+})();
+
 // Script for Header Footer // 
 
 window.addEventListener("scroll", function(){
@@ -89,4 +106,3 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
-

@@ -19,6 +19,6 @@ $animRun: 10s ease forwards infinite 8s;
 }
 @mixin visible {
 	transform: translate(0px, 0px);
-   transition: all 1s ease 0s;
+   transition: all 3s ease 0s;
    opacity: 1;
 }
