@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap');
 @import 'reset.scss';
 @import 'var.scss';
 
@@ -10,7 +10,6 @@
   --color-5: #E6DB74;
   --color-6: #87C232;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -36,10 +35,9 @@ body {
   top: 0;
   left: 0;
   z-index: 999;
-  padding: 40px $step;
+  padding: $step/2 $step;
   transition: $animStep;
   .logo {
-    font-size: 1em;
     font-weight: 700;
     color: var(--color-2);
     text-transform: uppercase;
@@ -56,28 +54,16 @@ body {
     list-style: none;
   }
   & .nav li a {
-    margin: 0 15px;
+    margin: 0 10px;
+    font: $text-font;
+    letter-spacing: 2px;
     text-decoration: none;
     color: var(--color-3);
-    font-size: 21px/18px;
     letter-spacing: 2px;
-    font-weight: 500;
     transition: $animStep;
   }
   & .nav li a:hover { 
-    padding:10px;
-    text-shadow: 
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080,
-      0 0 0px #080;
-    animation: animLilk 1s linear infinite;
+    margin: 30px;
   }
   &.stiky {
     padding: 5px $step;
@@ -93,7 +79,7 @@ body {
     transition: $animStep;
     opacity: 0;
   }
-}
+} 
 .profile-link {
   position: absolute;
   right: 50px;
@@ -144,7 +130,8 @@ body {
 .burger-link {
   background: transparent;
   color: var(--color-2);
-  font: 32px/38px 'Barlow Condensed', sans-serif;
+  font: $text-font;
+  letter-spacing: 2px;
   margin-left: 25px;
   text-decoration: none;
   transition: $animStep;
@@ -205,6 +192,13 @@ body {
       top: 5px;
       transform: rotate(-45deg);
     }
+  }
+}
+.burger {
+  &.stiky .b-container,
+  &.stiky .burger-nav {
+    transition: $animStep;
+    opacity: 0;
   }
 }
 .switch {
@@ -275,17 +269,19 @@ body {
     transition: $animStep;
   }
   & .divide-title {
-      display: flex;
-      justify-content: center;
       width: 530px;
-      font: bold 80px/96px 'Barlow Condensed', sans-serif;
-      color: $text-color;
+      font: $title-font;
+      color: var(--color-6);
       opacity: 0; 
       transition: all $animStep ease-in-out;
       transform: translate3d(-100%,20px,20px);
       &.active {
         transform: matrix(1, .2, .2, 2, 300, 145);
         opacity: 1;
+      }
+      .mark-black {
+        color: $text-color;
+        display: inline;
       }
     }
   .touch1 {
@@ -295,9 +291,6 @@ body {
   .touch2 {
     background: $bg-content;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
-    .divide-title {
-      color: var(--color-3);
-    }
   }
 }
 .divide:hover {
@@ -323,10 +316,10 @@ body {
     margin: ($step/2) auto;
     color: $text-color;
     h6 {
-      font: 700 32px/38px 'Raleway', sans-serif;
+      font: $block-font;
     }
     p {
-      font: normal 18px/21px 'Raleway', sans-serif;
+      font: $text-font;
     }
     data {
       color: var(--color-3);
@@ -345,10 +338,13 @@ body {
     background: $bg-content;
   }
   &:nth-child(4) {
-    background: url('../img/bg4.png') 50% / 100% no-repeat;
-    background-attachment: fixed;
+    background: $bg-content;
   }
   &:nth-child(5) {
+    background: url('../img/bg1.jpg') 50% / 100% no-repeat;
+    background-attachment: fixed;
+  }
+  &:nth-child(6) {
     background:  $bg-content;
   }
   .content-info {
@@ -356,7 +352,7 @@ body {
       display: flex;
       justify-content: center;
       width: 530px;
-      font: bold 80px/96px 'Barlow Condensed', sans-serif;
+      font: $title-font;
       color: $text-color;
       opacity: 0;
       transition: all $animStep ease-in-out;
@@ -366,28 +362,6 @@ body {
         opacity: 1;
       }
     } 
-  }
-}
-.progress-bar-skills {
-  max-width: 90%;
-  display: flex;
-  align-items: center;
-  margin: 30px auto;
-  overflow: hidden;
-  transition: $animStep;
-  h6 {
-    flex-basis: 30%;
-    font: normal 32px/38px 'Raleway', sans-serif;
-    text-align: center;
-    width: 280px;
-  }
-  .name {
-    font: normal 18px/16px 'Barlow Condensed', sans-serif;
-    text-align: right;
-    height: 10px;
-    background: var(--color-3);
-    border-radius: 25px;
-    width: 0;
   }
 }
 .text {
@@ -403,39 +377,55 @@ body {
 .active .animShow {
   @include visible;
 }
+#Skills {
+  padding: $step;
+  .progress-bar-skills {
+    margin: 30px $step;
+    overflow: hidden;
+    transition: $animStep;
+    h6 {
+    font: $text-font;
+    text-align: left;
+    letter-spacing: 2px;
+  }
+  .name {
+    height: 10px;
+    background: var(--color-3);
+    border-radius: 25px;
+    width: 0;
+    }
+  }
+}
 #Project {
   padding: $step ;
   cursor: pointer;
-  .content-info {
-    opacity: 0;
-  }
   .progect-block {
     margin: $step auto;
-    color: $bg-color;
-    font: 32px/38px 'Barlow Condensed', sans-serif;
-  }
-  a {
-    font: italic 18px/21px 'Raleway', sans-serif;
-    text-decoration-line: underline; 
-    color: var(--color-3);
-  }
-  &:hover .content-info {
-    @include visible;
-  }
-  &:hover {
-    @include visible;
-    background: var(--color-3) url('../img/Rectangle 4.png') 50% / 100% no-repeat;
+    color: $text-color;
+    letter-spacing: 2px;
+    font: $block-font;
+    p {
+      font: $text-font;
+    }
+    a {
+      font: $text-font;
+      text-decoration-line: underline; 
+      color: var(--color-3);
+    }
   }
 }
 #Experiens {
   padding: $step;
+  font: $text-font;
   .Experiens-block {
     margin: ($step/2) auto;
+    letter-spacing: 2px;
     color: $text-color;
-    font: 32px/38px 'Barlow Condensed', sans-serif;
+     h6 {
+      font: $block-font;
+    }
   }
   a, data {
-    font: italic 18px/21px 'Raleway', sans-serif;
     text-decoration-line: underline; 
     color: var(--color-3);
   }
@@ -456,7 +446,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    border: 3px solid var(--color-3);
+    border: 3px solid var(--color-2);
     height: 10px;
     width: 10px;
     transform: translate(-50%, -100%) rotate(225deg);
@@ -488,17 +478,20 @@ body {
   z-index: 999;
   padding: 5px $step;
   transition: $animStep;
-  .author-info h6 {
+  .mark {
+    font-weight: 700;
+    color: var(--color-2);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1em;
+    transition: $animStep;
+  }
+  .tel {
     color: var(--color-3);
-    font-size: 18px;
-    line-height: 21px;
+    letter-spacing: 2px;
+    font: $text-font;
   }
-  .author-info span {
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 38px;
-  }
-  &.stiky .author-info,
+  &.stiky .mark,
   &.stiky .tel {
     transition: $animStep;
     opacity: 0;
@@ -511,7 +504,7 @@ body {
   animation: finish-htmlCss $animRun;
   @keyframes finish-htmlCss {
   to {
-      width: 75%;
+      width: 90%;
     }
   }
 }
@@ -519,7 +512,7 @@ body {
   animation: finish-Responsivelayout $animRun;
   @keyframes finish-Responsivelayout {
     to {
-    width: 55%;
+    width: 75%;
     }
   }
 }
@@ -527,7 +520,7 @@ body {
   animation: finish-Bootstrap $animRun;
   @keyframes finish-Bootstrap {
     to {
-      width: 60%;
+      width: 80%;
     }
   }
 }
@@ -535,7 +528,7 @@ body {
   animation: finish-jQuery $animRun;
   @keyframes finish-jQuery {
     to {
-      width: 70%;
+      width: 75%;
     }
   }
 }
@@ -543,7 +536,7 @@ body {
   animation: finish-CssPreprocessors $animRun;
     @keyframes finish-CssPreprocessors {
     to {
-      width: 75%;
+      width: 85%;
     }
   }
 }
@@ -551,7 +544,7 @@ body {
   animation: finish-Gulp $animRun;
   @keyframes finish-Gulp {
     to {
-      width: 60%;
+      width: 80%;
     }
   } 
 }
@@ -559,7 +552,7 @@ body {
   animation: finish-Git $animRun;
   @keyframes finish-Git {
     to {
-      width: 75%;
+      width: 70%;
     }
   }  
 }
@@ -593,15 +586,6 @@ body {
     top: 90%;
   }
 }
-@keyframes animLilk{
-  0%{
-    filter:hue-rotate(0)
-  }
-  100%{
-    filter:hue-rotate(360deg)
-  }
-}
-
 @keyframes BurgerLinkInLeft {
   0% {
     transform: translate3d(0,250px,50px);

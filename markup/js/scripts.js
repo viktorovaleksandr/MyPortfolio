@@ -91,6 +91,9 @@ window.addEventListener("scroll", function(){
 	var header = document.querySelector(".header");
 	header.classList.toggle("stiky", window.scrollY > 0);
 
+  var header = document.querySelector(".burger");
+  header.classList.toggle("stiky", window.scrollY > 0);
+
   var footer = document.querySelector(".footer");
   footer.classList.toggle("stiky", window.scrollY < 10);
 

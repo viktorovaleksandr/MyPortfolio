@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Raleway&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -88,7 +88,6 @@ body {
   padding: 40px 80px;
   transition: 1.5s; }
   .header .logo {
-    font-size: 1em;
     font-weight: 700;
     color: var(--color-2);
     text-transform: uppercase;
@@ -102,18 +101,15 @@ body {
   .header .nav li {
     list-style: none; }
   .header .nav li a {
-    margin: 0 15px;
+    margin: 0 10px;
+    font: italic 18px/21px "Times New Roman", sans-serif;
+    letter-spacing: 2px;
     text-decoration: none;
     color: var(--color-3);
-    font-size: 21px/18px;
     letter-spacing: 2px;
-    font-weight: 500;
     transition: 1.5s; }
   .header .nav li a:hover {
-    padding: 10px;
-    text-shadow: 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080, 0 0 0px #080;
-    -webkit-animation: animLilk 1s linear infinite;
-            animation: animLilk 1s linear infinite; }
+    margin: 30px; }
   .header.stiky {
     padding: 5px 80px;
     background: var(--color-1); }
@@ -173,7 +169,8 @@ body {
 .burger-link {
   background: transparent;
   color: var(--color-2);
-  font: 32px/38px 'Barlow Condensed', sans-serif;
+  font: italic 18px/21px "Times New Roman", sans-serif;
+  letter-spacing: 2px;
   margin-left: 25px;
   text-decoration: none;
   transition: 1.5s;
@@ -226,6 +223,11 @@ body {
   .b-container.open .b-bun--bottom {
     top: 5px;
     transform: rotate(-45deg); }
+
+.burger.stiky .b-container,
+.burger.stiky .burger-nav {
+  transition: 1.5s;
+  opacity: 0; }
 
 .switch {
   transition: 1.5s;
@@ -285,17 +287,18 @@ body {
     height: 100%;
     transition: 1.5s; }
   .divide .divide-title {
-    display: flex;
-    justify-content: center;
     width: 530px;
-    font: bold 80px/96px 'Barlow Condensed', sans-serif;
-    color: #272822;
+    font: 80px/86px "Barlow Condensed", sans-serif;
+    color: var(--color-6);
     opacity: 0;
     transition: all 1.5s ease-in-out;
     transform: translate3d(-100%, 20px, 20px); }
     .divide .divide-title.active {
       transform: matrix(1, 0.2, 0.2, 2, 300, 145);
       opacity: 1; }
+    .divide .divide-title .mark-black {
+      color: #272822;
+      display: inline; }
   .divide .touch1 {
     background: var(--color-5);
     -webkit-clip-path: polygon(0 0, 50% 0, 55% 100%, 0 100%);
@@ -304,8 +307,6 @@ body {
     background: #f8f8f8;
     -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%);
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 55% 100%); }
-    .divide .touch2 .divide-title {
-      color: var(--color-3); }
 
 .divide:hover .touch {
   -webkit-clip-path: polygon(100% 0, 100% 100%, 100% 100%);
@@ -326,9 +327,9 @@ body {
   margin: 40px auto;
   color: #272822; }
   .About-block h6 {
-    font: 700 32px/38px 'Raleway', sans-serif; }
+    font: bold 32px/38px "Barlow Condensed", sans-serif; }
   .About-block p {
-    font: normal 18px/21px 'Raleway', sans-serif; }
+    font: italic 18px/21px "Times New Roman", sans-serif; }
   .About-block data {
     color: var(--color-3); }
 
@@ -343,15 +344,17 @@ body {
   .content:nth-child(3) {
     background: #f8f8f8; }
   .content:nth-child(4) {
-    background: url("../img/bg4.png") 50%/100% no-repeat;
-    background-attachment: fixed; }
+    background: #f8f8f8; }
   .content:nth-child(5) {
+    background: url("../img/bg1.jpg") 50%/100% no-repeat;
+    background-attachment: fixed; }
+  .content:nth-child(6) {
     background: #f8f8f8; }
   .content .content-info .title {
     display: flex;
     justify-content: center;
     width: 530px;
-    font: bold 80px/96px 'Barlow Condensed', sans-serif;
+    font: 80px/86px "Barlow Condensed", sans-serif;
     color: #272822;
     opacity: 0;
     transition: all 1.5s ease-in-out;
@@ -359,26 +362,6 @@ body {
     .content .content-info .title.active {
       transform: translate(0);
       opacity: 1; }
-
-.progress-bar-skills {
-  max-width: 90%;
-  display: flex;
-  align-items: center;
-  margin: 30px auto;
-  overflow: hidden;
-  transition: 1.5s; }
-  .progress-bar-skills h6 {
-    flex-basis: 30%;
-    font: normal 32px/38px 'Raleway', sans-serif;
-    text-align: center;
-    width: 280px; }
-  .progress-bar-skills .name {
-    font: normal 18px/16px 'Barlow Condensed', sans-serif;
-    text-align: right;
-    height: 10px;
-    background: var(--color-3);
-    border-radius: 25px;
-    width: 0; }
 
 .text {
   transform: translate(0, 120%);
@@ -400,38 +383,48 @@ body {
   transition: all 3s ease 0s;
   opacity: 1; }
 
+#Skills {
+  padding: 80px; }
+  #Skills .progress-bar-skills {
+    margin: 30px 80px;
+    overflow: hidden;
+    transition: 1.5s; }
+    #Skills .progress-bar-skills h6 {
+      font: italic 18px/21px "Times New Roman", sans-serif;
+      text-align: left;
+      letter-spacing: 2px; }
+    #Skills .progress-bar-skills .name {
+      height: 10px;
+      background: var(--color-3);
+      border-radius: 25px;
+      width: 0; }
+
 #Project {
   padding: 80px;
   cursor: pointer; }
-  #Project .content-info {
-    opacity: 0; }
   #Project .progect-block {
     margin: 80px auto;
-    color: #fff;
-    font: 32px/38px 'Barlow Condensed', sans-serif; }
-  #Project a {
-    font: italic 18px/21px 'Raleway', sans-serif;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
-    color: var(--color-3); }
-  #Project:hover .content-info {
-    transform: translate(0px, 0px);
-    transition: all 3s ease 0s;
-    opacity: 1; }
-  #Project:hover {
-    transform: translate(0px, 0px);
-    transition: all 3s ease 0s;
-    opacity: 1;
-    background: var(--color-3) url("../img/Rectangle 4.png") 50%/100% no-repeat; }
+    color: #272822;
+    letter-spacing: 2px;
+    font: bold 32px/38px "Barlow Condensed", sans-serif; }
+    #Project .progect-block p {
+      font: italic 18px/21px "Times New Roman", sans-serif; }
+    #Project .progect-block a {
+      font: italic 18px/21px "Times New Roman", sans-serif;
+      -webkit-text-decoration-line: underline;
+              text-decoration-line: underline;
+      color: var(--color-3); }
 
 #Experiens {
-  padding: 80px; }
+  padding: 80px;
+  font: italic 18px/21px "Times New Roman", sans-serif; }
   #Experiens .Experiens-block {
     margin: 40px auto;
-    color: #272822;
-    font: 32px/38px 'Barlow Condensed', sans-serif; }
+    letter-spacing: 2px;
+    color: #272822; }
+    #Experiens .Experiens-block h6 {
+      font: bold 32px/38px "Barlow Condensed", sans-serif; }
   #Experiens a, #Experiens data {
-    font: italic 18px/21px 'Raleway', sans-serif;
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
     color: var(--color-3); }
@@ -451,7 +444,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    border: 3px solid var(--color-3);
+    border: 3px solid var(--color-2);
     height: 10px;
     width: 10px;
     transform: translate(-50%, -100%) rotate(225deg);
@@ -482,15 +475,18 @@ body {
   z-index: 999;
   padding: 5px 80px;
   transition: 1.5s; }
-  .footer .author-info h6 {
+  .footer .mark {
+    font-weight: 700;
+    color: var(--color-2);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1em;
+    transition: 1.5s; }
+  .footer .tel {
     color: var(--color-3);
-    font-size: 18px;
-    line-height: 21px; }
-  .footer .author-info span {
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 38px; }
-  .footer.stiky .author-info,
+    letter-spacing: 2px;
+    font: italic 18px/21px "Times New Roman", sans-serif; }
+  .footer.stiky .mark,
   .footer.stiky .tel {
     transition: 1.5s;
     opacity: 0; }
@@ -501,11 +497,11 @@ body {
 
 @-webkit-keyframes finish-htmlCss {
   to {
-    width: 75%; } }
+    width: 90%; } }
 
 @keyframes finish-htmlCss {
   to {
-    width: 75%; } }
+    width: 90%; } }
 
 .Responsivelayout {
   -webkit-animation: finish-Responsivelayout 10s ease forwards infinite 8s;
@@ -513,11 +509,11 @@ body {
 
 @-webkit-keyframes finish-Responsivelayout {
   to {
-    width: 55%; } }
+    width: 75%; } }
 
 @keyframes finish-Responsivelayout {
   to {
-    width: 55%; } }
+    width: 75%; } }
 
 .Bootstrap {
   -webkit-animation: finish-Bootstrap 10s ease forwards infinite 8s;
@@ -525,11 +521,11 @@ body {
 
 @-webkit-keyframes finish-Bootstrap {
   to {
-    width: 60%; } }
+    width: 80%; } }
 
 @keyframes finish-Bootstrap {
   to {
-    width: 60%; } }
+    width: 80%; } }
 
 .jQuery {
   -webkit-animation: finish-jQuery 10s ease forwards infinite 8s;
@@ -537,11 +533,11 @@ body {
 
 @-webkit-keyframes finish-jQuery {
   to {
-    width: 70%; } }
+    width: 75%; } }
 
 @keyframes finish-jQuery {
   to {
-    width: 70%; } }
+    width: 75%; } }
 
 .CssPreprocessors {
   -webkit-animation: finish-CssPreprocessors 10s ease forwards infinite 8s;
@@ -549,11 +545,11 @@ body {
 
 @-webkit-keyframes finish-CssPreprocessors {
   to {
-    width: 75%; } }
+    width: 85%; } }
 
 @keyframes finish-CssPreprocessors {
   to {
-    width: 75%; } }
+    width: 85%; } }
 
 .Gulp {
   -webkit-animation: finish-Gulp 10s ease forwards infinite 8s;
@@ -561,11 +557,11 @@ body {
 
 @-webkit-keyframes finish-Gulp {
   to {
-    width: 60%; } }
+    width: 80%; } }
 
 @keyframes finish-Gulp {
   to {
-    width: 60%; } }
+    width: 80%; } }
 
 .Git {
   -webkit-animation: finish-Git 10s ease forwards infinite 8s;
@@ -573,11 +569,11 @@ body {
 
 @-webkit-keyframes finish-Git {
   to {
-    width: 75%; } }
+    width: 70%; } }
 
 @keyframes finish-Git {
   to {
-    width: 75%; } }
+    width: 70%; } }
 
 @-webkit-keyframes scroll-down {
   0% {
@@ -622,18 +618,6 @@ body {
   100% {
     opacity: 0;
     top: 90%; } }
-
-@-webkit-keyframes animLilk {
-  0% {
-    filter: hue-rotate(0); }
-  100% {
-    filter: hue-rotate(360deg); } }
-
-@keyframes animLilk {
-  0% {
-    filter: hue-rotate(0); }
-  100% {
-    filter: hue-rotate(360deg); } }
 
 @-webkit-keyframes BurgerLinkInLeft {
   0% {
