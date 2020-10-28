@@ -13,8 +13,10 @@ $brand-color-dark: #87C232;
 $bg-color-grennDark:#618930;
 
 $step: 80px;
-$animStep: 1.5s;
+$animStep: 1s;
 $animRun: 10s ease forwards infinite 8s;
+
+$shadow: 0 19px 30px rgba(0,0,0,0.2), 0 15px 12px rgba(0,0,0,0.2);
 
 @mixin disabled {
 	transform: translate(0, 120%);

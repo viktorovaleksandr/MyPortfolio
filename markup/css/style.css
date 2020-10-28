@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -65,7 +66,7 @@ html {
 body {
   max-width: 1440px;
   background: var(--color-1);
-  transition: background 1.5s; }
+  transition: background 1s; }
 
 .wrapper {
   max-width: 1280px;
@@ -86,14 +87,14 @@ body {
   left: 0;
   z-index: 999;
   padding: 40px 80px;
-  transition: 1.5s; }
+  transition: 1s; }
   .header .logo {
     font-weight: 700;
     color: var(--color-2);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1em;
-    transition: 1.5s; }
+    transition: 1s; }
   .header .nav {
     display: flex;
     justify-content: space-between;
@@ -107,7 +108,7 @@ body {
     text-decoration: none;
     color: var(--color-3);
     letter-spacing: 2px;
-    transition: 1.5s; }
+    transition: 1s; }
   .header .nav li a:hover {
     margin: 30px; }
   .header.stiky {
@@ -119,7 +120,7 @@ body {
   .header.stiky label,
   .header.stiky .logo,
   .header.stiky .bnt-scroll-down {
-    transition: 1.5s;
+    transition: 1s;
     opacity: 0; }
 
 .profile-link {
@@ -133,7 +134,7 @@ body {
       color: var(--color-3);
       letter-spacing: 2px;
       font-weight: 500;
-      transition: 1.5s; }
+      transition: 1s; }
     .profile-link li:hover .fa {
       transform: rotate3d(2, 1, 1, 30deg); }
   .profile-link .fa {
@@ -145,22 +146,26 @@ body {
   z-index: 10; }
   .burger-nav li {
     list-style-type: none;
-    padding: 10px;
-    text-align: right; }
+    padding: 10px 40px;
+    text-align: left; }
   .burger-nav li:not(.open) {
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
     -webkit-animation-name: BurgerLinkOutLeft;
             animation-name: BurgerLinkOutLeft; }
   .burger-nav li:first-child {
     padding-top: 80px; }
+  .burger-nav li:last-child {
+    padding-top: 40px; }
+  .burger-nav li:last-child a:after {
+    content: "→"; }
   .burger-nav.open {
     visibility: visible; }
     .burger-nav.open li {
-      -webkit-animation-duration: 1.5s;
-              animation-duration: 1.5s;
+      -webkit-animation-duration: 1s;
+              animation-duration: 1s;
       -webkit-animation-fill-mode: both;
               animation-fill-mode: both;
       -webkit-animation-name: BurgerLinkInLeft;
@@ -171,13 +176,13 @@ body {
   color: var(--color-2);
   font: italic 18px/21px "Times New Roman", sans-serif;
   letter-spacing: 2px;
-  margin-left: 25px;
+  margin-left: 40px;
   text-decoration: none;
-  transition: 1.5s;
+  transition: 1s;
   width: auto; }
   .burger-link:hover, .burger-link--active {
-    border-left: var(--color-3) solid 3px;
-    padding-left: 5px; }
+    border-bottom: var(--color-3) solid 3px;
+    padding: 0 0 10px 0; }
 
 .b-menu {
   border-radius: 50%;
@@ -187,7 +192,7 @@ body {
   padding-left: 15px;
   padding-top: 18px;
   position: relative;
-  transition: 1.5s;
+  transition: 1s;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -199,7 +204,7 @@ body {
   display: block;
   background: var(--color-3);
   position: relative;
-  transition: 0.75s; }
+  transition: 0.5s; }
   .b-bun--top, .b-bun--mid, .b-bun--bottom {
     height: 2px;
     top: 0;
@@ -223,14 +228,16 @@ body {
   .b-container.open .b-bun--bottom {
     top: 5px;
     transform: rotate(-45deg); }
+  .b-container:hover .b-bun--mid {
+    left: 6px; }
 
 .burger.stiky .b-container,
 .burger.stiky .burger-nav {
-  transition: 1.5s;
+  transition: 1s;
   opacity: 0; }
 
 .switch {
-  transition: 1.5s;
+  transition: 1s;
   position: absolute;
   display: inline-block;
   top: 25px;
@@ -259,7 +266,7 @@ body {
     bottom: 0;
     background: var(--color-3);
     border-radius: 25px;
-    transition: background 1.5s;
+    transition: background 1s;
     cursor: pointer; }
     .switch .switch-slider:before {
       content: "";
@@ -285,13 +292,13 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    transition: 1.5s; }
+    transition: 1s; }
   .divide .divide-title {
     width: 530px;
     font: 80px/86px "Barlow Condensed", sans-serif;
     color: var(--color-6);
     opacity: 0;
-    transition: all 1.5s ease-in-out;
+    transition: all 1s ease-in-out;
     transform: translate3d(-100%, 20px, 20px); }
     .divide .divide-title.active {
       transform: matrix(1, 0.2, 0.2, 2, 300, 145);
@@ -318,13 +325,12 @@ body {
   .divide .touch:hover .About-block {
     opacity: 1; }
   .divide .touch:hover .divide-title {
-    opacity: 0;
-    transition: 10ms; }
+    opacity: 0; }
 
 .About-block {
   opacity: 0;
   width: 600px;
-  margin: 40px auto;
+  margin: 0 auto;
   color: #272822; }
   .About-block h6 {
     font: bold 32px/38px "Barlow Condensed", sans-serif; }
@@ -340,16 +346,21 @@ body {
   background-blend-mode: multiply; }
   .content:nth-child(2) {
     background: url("../img/bg1.png") 50%/100% no-repeat;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    box-shadow: 0 19px 30px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.2); }
   .content:nth-child(3) {
-    background: #f8f8f8; }
+    background: #f8f8f8;
+    box-shadow: 0 19px 30px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.2); }
   .content:nth-child(4) {
-    background: #f8f8f8; }
+    background: #f8f8f8;
+    box-shadow: 0 19px 30px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.2); }
   .content:nth-child(5) {
     background: url("../img/bg1.jpg") 50%/100% no-repeat;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    box-shadow: 0 19px 30px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.2); }
   .content:nth-child(6) {
-    background: #f8f8f8; }
+    background: #f8f8f8;
+    box-shadow: 0 19px 30px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.2); }
   .content .content-info .title {
     display: flex;
     justify-content: center;
@@ -357,7 +368,7 @@ body {
     font: 80px/86px "Barlow Condensed", sans-serif;
     color: #272822;
     opacity: 0;
-    transition: all 1.5s ease-in-out;
+    transition: all 1s ease-in-out;
     transform: translate(-100%, 0px); }
     .content .content-info .title.active {
       transform: translate(0);
@@ -388,7 +399,7 @@ body {
   #Skills .progress-bar-skills {
     margin: 30px 80px;
     overflow: hidden;
-    transition: 1.5s; }
+    transition: 1s; }
     #Skills .progress-bar-skills h6 {
       font: italic 18px/21px "Times New Roman", sans-serif;
       text-align: left;
@@ -411,9 +422,11 @@ body {
       font: italic 18px/21px "Times New Roman", sans-serif; }
     #Project .progect-block a {
       font: italic 18px/21px "Times New Roman", sans-serif;
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline;
-      color: var(--color-3); }
+      color: var(--color-3);
+      text-decoration: none; }
+    #Project .progect-block a:after {
+      content: "→";
+      padding: 5px; }
 
 #Experiens {
   padding: 80px;
@@ -424,10 +437,13 @@ body {
     color: #272822; }
     #Experiens .Experiens-block h6 {
       font: bold 32px/38px "Barlow Condensed", sans-serif; }
-  #Experiens a, #Experiens data {
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
-    color: var(--color-3); }
+  #Experiens a,
+  #Experiens data {
+    color: var(--color-3);
+    text-decoration: none; }
+  #Experiens a:after {
+    content: "→";
+    padding: 5px; }
 
 .bnt-scroll-top {
   position: fixed;
@@ -438,7 +454,7 @@ body {
   height: 50px;
   opacity: 0;
   pointer-events: none;
-  transition: 1.5s; }
+  transition: 1s; }
   .bnt-scroll-top:before, .bnt-scroll-top:after {
     content: "";
     position: absolute;
@@ -474,21 +490,21 @@ body {
   left: 0;
   z-index: 999;
   padding: 5px 80px;
-  transition: 1.5s; }
+  transition: 1s; }
   .footer .mark {
     font-weight: 700;
     color: var(--color-2);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1em;
-    transition: 1.5s; }
+    transition: 1s; }
   .footer .tel {
     color: var(--color-3);
     letter-spacing: 2px;
     font: italic 18px/21px "Times New Roman", sans-serif; }
   .footer.stiky .mark,
   .footer.stiky .tel {
-    transition: 1.5s;
+    transition: 1s;
     opacity: 0; }
 
 .htmlCss {
