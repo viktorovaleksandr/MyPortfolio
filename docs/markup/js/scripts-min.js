@@ -1,0 +1,1 @@
+function darkToggle(){document.getElementById("body").classList.toggle("dark-theme")}

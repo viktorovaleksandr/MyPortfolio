@@ -1,0 +1,6 @@
+[1020/093750.432:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1022/093826.515:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1022/214039.066:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\User\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\c8db57fe-45d8-49e4-9dbf-caad8f8ae7ef: Системе не удается найти указанный путь. (0x3)
+[1023/001503.611:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\User\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\346a7715-ba2a-4c13-bd1a-f81f6be3d5ff: Системе не удается найти указанный путь. (0x3)
+[1023/013642.050:ERROR:process_reader_win.cc(123)] NtOpenThread: {Отказано в доступе} Процесс запросил доступ к объекту, но права на доступ не предоставлены. (0xc0000022)
+[1023/013642.050:ERROR:exception_snapshot_win.cc(99)] thread ID 9064 not found in process
